@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+<!-- Perplexity Computer Attribution — SEO Meta Tags -->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Island Frequency — Caribbean Podcast Studio Dashboard</title>
+<meta name="description" content="Daily curated topics for Caribbean podcast discussions — development, tech, music, culture, and economics.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="./base.css">
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./island-picker.css">
+</head>
+<body>
+<div class="app-shell">
+
+  <!-- TOP NAV -->
+  <nav class="top-nav">
+    <a class="nav-logo" href="#">
+      <svg class="nav-logo-icon" viewBox="0 0 36 36" fill="none" aria-label="Island Frequency logo">
+        <circle cx="18" cy="18" r="17" stroke="var(--color-primary)" stroke-width="1.5"/>
+        <circle cx="18" cy="18" r="11" stroke="var(--color-accent)" stroke-width="1.5" stroke-dasharray="3 2"/>
+        <circle cx="18" cy="18" r="5" fill="var(--color-primary)"/>
+        <path d="M18 4 Q22 12 18 18 Q14 12 18 4Z" fill="var(--color-accent)" opacity="0.6"/>
+        <path d="M32 18 Q24 22 18 18 Q24 14 32 18Z" fill="var(--color-primary)" opacity="0.5"/>
+        <path d="M18 32 Q14 24 18 18 Q22 24 18 32Z" fill="var(--color-accent)" opacity="0.4"/>
+        <path d="M4 18 Q12 14 18 18 Q12 22 4 18Z" fill="var(--color-primary)" opacity="0.3"/>
+      </svg>
+      <div class="nav-logo-text">
+        <span class="nav-logo-title">Island Frequency</span>
+        <span class="nav-logo-sub">Podcast Studio Dashboard</span>
+      </div>
+    </a>
+    <div class="nav-right">
+      <button class="island-nav-btn" id="openIslandPicker" aria-label="Open island picker">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span class="label">Pick an Island</span>
+      </button>
+      <div class="live-badge">
+        <span class="live-dot"></span>
+        Live Topics
+      </div>
+      <div class="date-display" id="dateDisplay">—</div>
+      <div class="search-wrap">
+        <svg class="search-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5L13.5 13.5"/>
+        </svg>
+        <input class="search-input" type="search" placeholder="Search topics…" id="searchInput" aria-label="Search topics">
+      </div>
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <div class="page-hero">
+      <div class="episode-kicker">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/>
+        </svg>
+        Today's Session
+      </div>
+      <h1 class="hero-heading">
+        Caribbean Conversations —<br><span id="heroDate">March 14, 2026</span>
+      </h1>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <div class="hosts-badge">
+            <div class="host-avatar young">30</div>
+            <div class="host-avatar elder">65</div>
+          </div>
+          <span>Intergenerational Hosts</span>
+        </div>
+        <div class="hero-meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2a3 3 0 0 0 0 6 3 3 0 0 0 0-6z"/><path d="M19 10H5a2 2 0 0 0-2 2v1a10 10 0 0 0 20 0v-1a2 2 0 0 0-2-2z"/>
+          </svg>
+          5–10 min per topic
+        </div>
+        <div class="hero-meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          Caribbean-wide coverage
+        </div>
+        <div class="hero-meta-item" id="topicCount">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/>
+            <path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+            <path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/>
+            <path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/>
+            <path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/>
+            <path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/>
+            <path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/>
+            <path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/>
+          </svg>
+          <span id="totalTopics">8 topics loaded</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS BAR -->
+    <div class="stats-bar" id="statsBar">
+      <div class="stat-item">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Development</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">2</div>
+        <div class="stat-label">Tech</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">2</div>
+        <div class="stat-label">Music</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">1</div>
+        <div class="stat-label">Culture</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">1</div>
+        <div class="stat-label">Economy</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">8</div>
+        <div class="stat-label">Total Today</div>
+      </div>
+    </div>
+
+    <!-- FILTER BAR -->
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-btn active" data-filter="all">All Topics</button>
+      <button class="filter-btn cat-dev" data-filter="dev">
+        <span class="cat-dot"></span>Development
+      </button>
+      <button class="filter-btn cat-tech" data-filter="tech">
+        <span class="cat-dot"></span>Tech & Innovation
+      </button>
+      <button class="filter-btn cat-music" data-filter="music">
+        <span class="cat-dot"></span>Music Industry
+      </button>
+      <button class="filter-btn cat-econ" data-filter="econ">
+        <span class="cat-dot"></span>Economy
+      </button>
+      <button class="filter-btn cat-culture" data-filter="culture">
+        <span class="cat-dot"></span>Culture
+      </button>
+    </div>
+
+    <!-- TOPICS GRID -->
+    <div class="main-content">
+      <div class="topics-grid" id="topicsGrid"></div>
+    </div>
+  </main>
+
+  <footer>
+    <div>
+      Sources updated daily from ICT Pulse, Silicon Caribe, Caribbean Development Bank, Billboard, IMC, Caribbean World Magazine, and more.
+    </div>
+    <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+  </footer>
+</div>
+
+<!-- ISLAND PICKER OVERLAY -->
+<div class="island-picker-overlay" id="islandPickerOverlay" role="dialog" aria-modal="true" aria-label="Island News Picker">
+  <div class="island-picker-panel">
+    <div class="picker-drag-handle"></div>
+    <div class="picker-header">
+      <h2 class="picker-title">Pick an Island</h2>
+      <button class="picker-close" id="closeIslandPicker" aria-label="Close island picker">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- Hint -->
+    <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin-top:calc(var(--space-2)*-1)">Select any territory to load this week's most recent news — ready for your next session.</p>
+
+    <!-- Greater Antilles -->
+    <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+      <div class="picker-region-label">Greater Antilles</div>
+      <div class="island-grid" id="islandGrid"></div>
+    </div>
+
+    <!-- Eastern Caribbean -->
+    <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+      <div class="picker-region-label">Eastern Caribbean</div>
+      <div class="island-grid" id="islandGridEast"></div>
+    </div>
+
+    <!-- Southern Caribbean -->
+    <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+      <div class="picker-region-label">Southern Caribbean & Mainland</div>
+      <div class="island-grid" id="islandGridSouth"></div>
+    </div>
+
+    <!-- Dutch / French Islands -->
+    <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+      <div class="picker-region-label">Dutch & French Caribbean</div>
+      <div class="island-grid" id="islandGridDutch"></div>
+    </div>
+
+    <!-- News Results -->
+    <div class="island-news-panel" id="islandNewsPanel">
+      <div class="island-news-header">
+        <div class="island-news-title">
+          <span class="island-news-flag" id="newsFlag">🌍</span>
+          <span id="newsTitleText">News</span>
+        </div>
+        <span class="island-news-meta" id="newsMeta">Most recent stories</span>
+      </div>
+      <div id="newsStoriesContainer"></div>
+    </div>
+  </div>
+</div>
+
+<!-- REFRESH TOAST -->
+<div class="refresh-toast" id="refreshToast">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+  </svg>
+  Topics refreshed for today
+</div>
+
+<script>
+/* ============================================================
+   ISLAND FREQUENCY — Podcast Studio Dashboard
+   Topics data + render engine
+   ============================================================ */
+
+const TOPICS = [
+  {
+    id: 1,
+    featured: true,
+    category: "dev",
+    categoryLabel: "Development",
+    hot: true,
+    title: "Caribbean's 2026 Economic Crossroads: Modest Growth vs. Climate Debt",
+    summary: "The Caribbean Development Bank projects just 1.1% GDP growth for 2026 (excluding Guyana) while Guyana itself rockets past 20%. Nine countries still carry debt above 60% of GDP. Meanwhile, hurricane damage continues to compound in Jamaica. Is the region at a turning point or stuck in a cycle?",
+    points: [
+      {
+        age: "30",
+        type: "young",
+        text: "Guyana's oil wealth is creating a two-speed Caribbean — what does that mean for smaller islands trying to compete for FDI?"
+      },
+      {
+        age: "65",
+        type: "elder",
+        text: "We've heard promises of diversification for 50 years. The debt ceiling keeps rising — at what point does the region need a genuine structural reset?"
+      }
+    ],
+    source: "Caribbean Development Bank",
+    sourceUrl: "https://www.caribank.org/newsroom/news-and-events/caribbean-economies-face-modest-growth-2026-amid-global-uncertainty-cdb",
+    duration: "8–10 min",
+    stats: [
+      { label: "Growth excl. Guyana", val: "1.1%" },
+      { label: "Guyana growth", val: ">20%" },
+      { label: "Avg. inflation drop", val: "3.4%" }
+    ]
+  },
+  {
+    id: 2,
+    category: "tech",
+    categoryLabel: "Tech",
+    hot: true,
+    title: "Dominican Republic Signs NVIDIA + Google Deals — Is It the Caribbean's New Tech Capital?",
+    summary: "The DR has inked strategic agreements with NVIDIA for an AI Center of Excellence, a $500M+ Google investment for Latin America's first Digital Exchange International Port, and a $600M commercial spaceport deal. Satellite launch planned before May 2028.",
+    points: [
+      {
+        age: "30",
+        type: "young",
+        text: "This is massive for Caribbean tech talent — will we see brain drain reverse as high-value AI jobs come to the region?"
+      },
+      {
+        age: "65",
+        type: "elder",
+        text: "Big deals sound good in press conferences — but we've seen foreign investment promises before. What's the local ownership stake and who actually benefits?"
+      }
+    ],
+    source: "De Último Minuto",
+    sourceUrl: "https://deultimominuto.net/en/technology/from-ai-centers-of-excellence-to-launching-satellites-dr-prepares-to-take-a-big-leap-as-a-technological-and-innovation-hub-in-the-caribbean/",
+    duration: "7–9 min"
+  },
+  {
+    id: 3,
+    category: "tech",
+    categoryLabel: "Tech",
+    hot: false,
+    title: "Caribbean Islands Building Their Own Data Centers — Ending the Foreign Storage Era",
+    summary: "Caribbean countries have long stored government and corporate data in foreign data centers in North America and Europe. That's shifting fast as AI drives demand for regional data sovereignty. Small island states are now building local infrastructure for the first time.",
+    points: [
+      {
+        age: "30",
+        type: "young",
+        text: "Data sovereignty isn't just a tech issue — it's about who controls the information that governs Caribbean lives. AI makes this urgent right now."
+      },
+      {
+        age: "65",
+        type: "elder",
+        text: "What good is a local data center if the expertise to run it still lives abroad? This needs a serious human capital investment, not just hardware."
+      }
+    ],
+    source: "ICT Pulse",
+    sourceUrl: "https://ict-pulse.com/2026/03/roundup-for-the-week-ending-1-march-2026/",
+    duration: "6–8 min"
+  },
+  {
+    id: 4,
+    category: "music",
+    categoryLabel: "Music",
+    hot: true,
+    title: "ECCO Distributes Record $1.3M in Royalties to Eastern Caribbean Artists",
+    summary: "The Eastern Caribbean Collective Organization for Music Rights (ECCO) has issued its largest-ever royalty payout — $1.3 million USD — to artists across the OECS. The CEO is calling for all unlicensed broadcasters to get legal and all artists to register, signaling a maturation of the region's music economy.",
+    points: [
+      {
+        age: "30",
+        type: "young",
+        text: "Caribbean artists are finally seeing real money from their streams and airplay. But most still don't know how to register. Is the system set up to fail them?"
+      },
+      {
+        age: "65",
+        type: "elder",
+        text: "In my day, artists just got a handshake deal. $1.3M sounds big but divide that across the whole Eastern Caribbean — the fight for fair pay is far from over."
+      }
+    ],
+    source: "YouTube / DBS TV",
+    sourceUrl: "https://www.youtube.com/watch?v=Sycf9Dcm8VM",
+    duration: "7–9 min"
+  },
+  {
+    id: 5,
+    category: "econ",
+    categoryLabel: "Economy",
+    hot: false,
+    title: "Jamaica's Digital Tax Proposal: Taxing Netflix, Spotify & Foreign Digital Services",
+    summary: "Jamaica's Finance Minister has tabled a proposal to apply General Consumption Tax (GCT) to digital services and intangibles supplied from abroad — covering streaming, SaaS, e-commerce. If passed for FY2026/27, it would be a landmark shift in how the Caribbean taxes the digital economy.",
+    points: [
+      {
+        age: "30",
+        type: "young",
+        text: "It's smart fiscal policy in theory, but it could price out lower-income Jamaicans who rely on affordable streaming to access global culture and education."
+      },
+      {
+        age: "65",
+        type: "elder",
+        text: "The government needs revenue, and foreign tech companies profit enormously from Jamaica without paying a cent. This was always going to happen."
+      }
+    ],
+    source: "ICT Pulse",
+    sourceUrl: "https://ict-pulse.com/2026/03/roundup-for-the-week-ending-1-march-2026/",
+    duration: "6–8 min"
+  },
+  {
+    id: 6,
+    category: "music",
+    categoryLabel: "Music",
+    hot: false,
+    title: "Island Music Conference 2026: Jamaica Pushes to Institutionalize the Creative Economy",
+    summary: "IMC 2026 in Kingston brought together SiriusXM execs, regional artists, and policy makers around the theme of formally institutionalizing Caribbean creative industries. Discussions covered music licensing, royalty education, and how the creative sector can be recognized as a legitimate economic pillar.",
+    points: [
+      {
+        age: "30",
+        type: "young",
+        text: "Caribbean music reaches hundreds of millions globally but our artists are still DIYing their businesses. Institutionalizing the industry means real infrastructure and education."
+      },
+      {
+        age: "65",
+        type: "elder",
+        text: "We've always known Caribbean music has global value. The question is whether governments will stop treating culture as an afterthought and put real money behind it."
+      }
+    ],
+    source: "Island Music Conference",
+    sourceUrl: "https://www.islandmusicconference.com/post/jamaica-leads-regional-shift-toward-institutionalizing-the-creative-economy",
+    duration: "7–8 min"
+  },
+  {
+    id: 7,
+    category: "dev",
+    categoryLabel: "Development",
+    hot: false,
+    title: "Guyana's Biometric National ID Rollout — Progress or Privacy Risk?",
+    summary: "Guyana is rolling out biometric national IDs promising faster services and reduced bureaucracy. But critics are raising serious questions about data control, sovereignty, and alignment with global tech politics — especially as the country's oil wealth makes it a more prominent target.",
+    points: [
+      {
+        age: "30",
+        type: "young",
+        text: "Biometrics are everywhere now — face ID on your phone, airport e-gates. But a government biometric database is different. Who are they sharing this data with?"
+      },
+      {
+        age: "65",
+        type: "elder",
+        text: "In a small country with one-party dominance, a biometric database is political power. History says we should be very careful about who holds these keys."
+      }
+    ],
+    source: "Caribbean World Magazine",
+    sourceUrl: "https://caribbeanworld-magazine.com/travel-trade/home/what-s-up-in-the-caribbean-march-2026-culture-events-and-buzz-across-the-islands/",
+    duration: "6–8 min"
+  },
+  {
+    id: 8,
+    category: "culture",
+    categoryLabel: "Culture",
+    hot: false,
+    title: "Dancehall's 2026 Resurgence: Vybz Kartel, Masicka & the New Wave",
+    summary: "The 2026 dancehall season is in full effect — Vybz Kartel, Masicka, Popcaan, Skippa, and Mavado are dominating charts. Jamaica's bounce-back post-Hurricane Melissa is being felt through culture, with benefit concerts and a charged creative scene. Dancehall is asserting itself globally again.",
+    points: [
+      {
+        age: "30",
+        type: "young",
+        text: "Dancehall is the most globally influential Caribbean music right now — it shapes UK drill, Afrobeats crossovers, and TikTok trends. But the artists making it aren't always the ones cashing in."
+      },
+      {
+        age: "65",
+        type: "elder",
+        text: "Every time Jamaica is hit by a storm or a crisis, the music gets more powerful. That resilience is beautiful — but culture shouldn't have to be our only export."
+      }
+    ],
+    source: "Billboard / Reggae Vibes",
+    sourceUrl: "https://www.billboard.com/lists/caribbean-music-festivals-2026-guide-list-reggae-dancehall/",
+    duration: "5–7 min"
+  }
+];
+
+/* ============================================================
+   RENDER LOGIC
+   ============================================================ */
+
+function categoryColor(cat) {
+  const map = { dev: '#006e7a', tech: '#5b3fa8', music: '#c9820a', econ: '#2e7d32', culture: '#a0394a' };
+  return map[cat] || '#006e7a';
+}
+
+function renderCard(topic) {
+  const isFeatured = topic.featured;
+  const card = document.createElement('div');
+  card.className = `topic-card cat-${topic.category}${isFeatured ? ' featured' : ''}`;
+  card.dataset.category = topic.category;
+
+  const hotBadge = topic.hot
+    ? `<span class="card-hot-badge">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 .67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67z"/></svg>
+        Hot
+      </span>`
+    : '';
+
+  if (isFeatured) {
+    // Build stats
+    const statsHtml = (topic.stats || []).map(s => `
+      <div class="featured-stat">
+        <div class="featured-stat-label">${s.label}</div>
+        <div class="featured-stat-val">${s.val}</div>
+      </div>
+    `).join('<div class="featured-divider"></div>');
+
+    card.innerHTML = `
+      <div class="card-left-accent"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-category">${topic.categoryLabel}</span>
+          ${hotBadge}
+        </div>
+        <h2 class="card-title">${topic.title}</h2>
+        <p class="card-summary">${topic.summary}</p>
+        <div class="talking-points">
+          <div class="tp-label">Discussion Points</div>
+          ${topic.points.map(p => `
+            <div class="tp-item">
+              <div class="tp-age-chip ${p.type}">${p.age}</div>
+              <span class="tp-text">${p.text}</span>
+            </div>
+          `).join('')}
+        </div>
+        <div class="card-footer" style="padding-left:0;padding-right:0;border-top:1px solid var(--color-divider);margin-top:auto;">
+          <a class="card-source" href="${topic.sourceUrl}" target="_blank" rel="noopener noreferrer">
+            <svg class="source-favicon" viewBox="0 0 14 14" fill="none">
+              <circle cx="7" cy="7" r="6.5" stroke="currentColor" stroke-width="1"/>
+              <path d="M7 1a6 6 0 0 1 0 12M7 1a6 6 0 0 0 0 12M1 7h12" stroke="currentColor" stroke-width="1"/>
+            </svg>
+            <span class="card-source-name">${topic.source}</span>
+          </a>
+          <span class="card-duration">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+            ${topic.duration}
+          </span>
+        </div>
+      </div>
+      ${statsHtml ? `<div class="featured-extra">${statsHtml}</div>` : ''}
+    `;
+  } else {
+    card.innerHTML = `
+      <div class="card-top-bar"></div>
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-category">${topic.categoryLabel}</span>
+          ${hotBadge}
+        </div>
+        <h2 class="card-title">${topic.title}</h2>
+        <p class="card-summary">${topic.summary}</p>
+        <div class="talking-points">
+          <div class="tp-label">Discussion Points</div>
+          ${topic.points.map(p => `
+            <div class="tp-item">
+              <div class="tp-age-chip ${p.type}">${p.age}</div>
+              <span class="tp-text">${p.text}</span>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+      <div class="card-footer">
+        <a class="card-source" href="${topic.sourceUrl}" target="_blank" rel="noopener noreferrer">
+          <svg class="source-favicon" viewBox="0 0 14 14" fill="none">
+            <circle cx="7" cy="7" r="6.5" stroke="currentColor" stroke-width="1"/>
+            <path d="M7 1a6 6 0 0 1 0 12M7 1a6 6 0 0 0 0 12M1 7h12" stroke="currentColor" stroke-width="1"/>
+          </svg>
+          <span class="card-source-name">${topic.source}</span>
+        </a>
+        <span class="card-duration">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+          ${topic.duration}
+        </span>
+      </div>
+    `;
+  }
+
+  return card;
+}
+
+function renderTopics(filter = 'all', query = '') {
+  const grid = document.getElementById('topicsGrid');
+  grid.innerHTML = '';
+
+  const filtered = TOPICS.filter(t => {
+    const catMatch = filter === 'all' || t.category === filter;
+    const queryLower = query.toLowerCase();
+    const textMatch = !query || t.title.toLowerCase().includes(queryLower) || t.summary.toLowerCase().includes(queryLower);
+    return catMatch && textMatch;
+  });
+
+  filtered.forEach((topic, i) => {
+    const card = renderCard(topic);
+    grid.appendChild(card);
+    // Staggered reveal
+    setTimeout(() => card.classList.add('visible'), i * 60 + 50);
+  });
+
+  document.getElementById('totalTopics').textContent = `${filtered.length} topic${filtered.length !== 1 ? 's' : ''} loaded`;
+}
+
+/* ============================================================
+   FILTER INTERACTIONS
+   ============================================================ */
+
+let activeFilter = 'all';
+let searchQuery = '';
+
+document.getElementById('filterBar').addEventListener('click', e => {
+  const btn = e.target.closest('[data-filter]');
+  if (!btn) return;
+  activeFilter = btn.dataset.filter;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderTopics(activeFilter, searchQuery);
+});
+
+document.getElementById('searchInput').addEventListener('input', e => {
+  searchQuery = e.target.value;
+  renderTopics(activeFilter, searchQuery);
+});
+
+/* ============================================================
+   DATE DISPLAY
+   ============================================================ */
+
+function formatDate(d) {
+  return d.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+const now = new Date();
+document.getElementById('dateDisplay').textContent = formatDate(now);
+document.getElementById('heroDate').textContent = now.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+
+/* ============================================================
+   THEME TOGGLE
+   ============================================================ */
+
+(function(){
+  const t = document.querySelector('[data-theme-toggle]');
+  const r = document.documentElement;
+  let d = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
+  r.setAttribute('data-theme', d);
+  if (t) {
+    const sunIcon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+    const moonIcon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    function setIcon() { t.innerHTML = d === 'dark' ? sunIcon : moonIcon; }
+    setIcon();
+    t.addEventListener('click', () => {
+      d = d === 'dark' ? 'light' : 'dark';
+      r.setAttribute('data-theme', d);
+      t.setAttribute('aria-label', 'Switch to ' + (d === 'dark' ? 'light' : 'dark') + ' mode');
+      setIcon();
+    });
+  }
+})();
+
+/* ============================================================
+   REFRESH TOAST (shows on load to indicate live content)
+   ============================================================ */
+
+function showRefreshToast() {
+  const toast = document.getElementById('refreshToast');
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 3500);
+}
+
+/* ============================================================
+   INIT
+   ============================================================ */
+
+renderTopics();
+setTimeout(showRefreshToast, 1200);
+
+/* ============================================================
+   ISLAND DATA
+   ============================================================ */
+
+const ISLANDS = {
+  greater: [
+    { id: 'jamaica',    flag: '🇯🇲', name: 'Jamaica',        sub: 'JM' },
+    { id: 'cuba',       flag: '🇨🇺', name: 'Cuba',           sub: 'CU' },
+    { id: 'haiti',      flag: '🇭🇹', name: 'Haiti',          sub: 'HT' },
+    { id: 'dr',         flag: '🇩🇴', name: 'Dominican Rep.', sub: 'DO' },
+    { id: 'puertorico', flag: '🇵🇷', name: 'Puerto Rico',    sub: 'PR' },
+  ],
+  eastern: [
+    { id: 'barbados',   flag: '🇧🇧', name: 'Barbados',        sub: 'BB' },
+    { id: 'stlucia',    flag: '🇱🇨', name: 'Saint Lucia',     sub: 'LC' },
+    { id: 'svg',        flag: '🇻🇨', name: 'St. Vincent',     sub: 'VC' },
+    { id: 'grenada',    flag: '🇬🇩', name: 'Grenada',         sub: 'GD' },
+    { id: 'antigua',    flag: '🇦🇬', name: 'Antigua',         sub: 'AG' },
+    { id: 'stkitts',    flag: '🇰🇳', name: 'St. Kitts',       sub: 'KN' },
+    { id: 'dominica',   flag: '🇩🇲', name: 'Dominica',        sub: 'DM' },
+    { id: 'montserrat', flag: '🇲🇸', name: 'Montserrat',      sub: 'MS' },
+  ],
+  southern: [
+    { id: 'tt',         flag: '🇹🇹', name: 'Trinidad & Tobago', sub: 'TT' },
+    { id: 'guyana',     flag: '🇬🇾', name: 'Guyana',            sub: 'GY' },
+    { id: 'suriname',   flag: '🇸🇷', name: 'Suriname',          sub: 'SR' },
+    { id: 'belize',     flag: '🇧🇿', name: 'Belize',            sub: 'BZ' },
+    { id: 'bahamas',    flag: '🇧🇸', name: 'The Bahamas',       sub: 'BS' },
+    { id: 'cayman',     flag: '🇰🇾', name: 'Cayman Islands',    sub: 'KY' },
+  ],
+  dutch: [
+    { id: 'sxm',        flag: '🇸🇽', name: 'Sint Maarten',  sub: 'SX' },
+    { id: 'curacao',    flag: '🇨🇼', name: 'Curaçao',        sub: 'CW' },
+    { id: 'aruba',      flag: '🇦🇼', name: 'Aruba',          sub: 'AW' },
+    { id: 'bonaire',    flag: '🇧🇶', name: 'Bonaire',        sub: 'BQ' },
+    { id: 'guadeloupe', flag: '🇬🇵', name: 'Guadeloupe',     sub: 'GP' },
+    { id: 'martinique', flag: '🇲🇶', name: 'Martinique',     sub: 'MQ' },
+  ]
+};
+
+// Curated real news per island (sourced March 2026)
+const ISLAND_NEWS = {
+  jamaica: [
+    {
+      headline: 'IMC 2026: Jamaica Leads Regional Shift Toward Institutionalizing the Creative Economy',
+      snippet: 'Kingston\'s Island Music Conference brought together SiriusXM execs, artists, and policy makers to formally integrate the creative sector as an economic pillar. Licensing, royalties, and digital distribution were centre stage.',
+      brief: 'The 2026 Island Music Conference in Kingston marked a turning point for Jamaica\'s creative sector — not just as culture, but as a formal economic pillar. SiriusXM executives joined Jamaican artists, policy makers, and regional stakeholders to discuss how to systematize music licensing, expand royalty frameworks, and build digital distribution infrastructure. The IMC has steadily grown into the most important gathering of its kind in the Caribbean, and 2026 saw it explicitly address how governments can legislate and fund the creative economy the same way they fund agriculture or tourism. Jamaica is positioning itself as the blueprint for how a small island can turn cultural IP into national GDP.',
+      host30: 'Streaming and digital distribution are finally being taken seriously at a policy level — but are we too late? The royalty systems in place don\'t reflect how Gen Z actually consumes music. What does a modern creative economy framework actually need to look like?',
+      host65: 'Jamaica has always exported its culture without always being paid properly for it. Reggae built a global industry but the artists rarely saw the returns. The question is whether this new institutional push actually changes the money flow or just creates more bureaucracy.',
+      source: 'Island Music Conference', url: 'https://www.islandmusicconference.com/post/jamaica-leads-regional-shift-toward-institutionalizing-the-creative-economy',
+      date: 'Mar 4, 2026', angle: '🎵 Music Business'
+    },
+    {
+      headline: 'Jamaica\'s Proposed Digital Tax on Netflix, Spotify & Foreign Tech Services',
+      snippet: 'Finance Minister tables a GCT proposal covering digital services and intangibles supplied from abroad. If passed for FY2026/27, it would be the region\'s boldest move yet to tax the digital economy.',
+      brief: 'Jamaica\'s Finance Minister has tabled a General Consumption Tax (GCT) proposal that would apply to digital services and intangibles delivered from abroad — platforms like Netflix, Spotify, Apple Music, and cloud software tools used by businesses. If passed for the FY2026/27 budget, it would make Jamaica the first Caribbean nation to comprehensively tax the digital economy. The proposal comes as the government searches for new revenue streams amid post-hurricane fiscal pressure. Supporters argue foreign tech companies earn billions from Caribbean users while contributing nothing to local tax bases. Critics worry it could increase costs for digital entrepreneurs and consumers who depend on these platforms daily.',
+      host30: 'This directly hits how our generation works and entertains itself. Every subscription goes up, every freelancer\'s software costs more. But if the government actually reinvests it into digital infrastructure, maybe it\'s worth it — what\'s the plan for those revenues?',
+      host65: 'The old model was taxing what came through the port. Now it\'s taxing what comes through the cable. The principle is the same — if you\'re extracting value from our market, you should contribute to it. The real question is enforcement — how do you collect from a company with no local office?',
+      source: 'ICT Pulse', url: 'https://ict-pulse.com/2026/03/roundup-for-the-week-ending-1-march-2026/',
+      date: 'Mar 1, 2026', angle: '💰 Economy'
+    },
+    {
+      headline: 'Hurricane Melissa Recovery: Jamaica Contracts Second Consecutive Year of Economic Decline',
+      snippet: 'Jamaica recorded economic contraction for the second year running after Hurricane Melissa compounded earlier Hurricane Beryl damage. Several top artists including Shaggy and Sean Paul led benefit concerts.',
+      brief: 'Jamaica\'s economy contracted for the second consecutive year in 2025-26, a sobering reality as the compounding effects of Hurricane Beryl and then Hurricane Melissa continue to ripple through agriculture, tourism, and infrastructure. The Caribbean Development Bank flagged Jamaica alongside several other nations as facing heightened climate-fiscal risk. In a rare moment of national unity, artists including Shaggy and Sean Paul organized benefit concerts to raise recovery funds — a callback to decades of Caribbean artists serving as community anchors during crisis. The government is navigating a difficult balance: managing debt, rebuilding infrastructure, and maintaining social services under significant strain.',
+      host30: 'Two back-to-back hurricanes in two years — this is what climate change actually looks like for us. Not projections, not future scenarios. It\'s already here and it\'s already costing us GDP. What does a serious climate adaptation economy look like for Jamaica?',
+      host65: 'I remember when a major hurricane was an exceptional event. Now we\'re talking about "hurricane seasons" as a permanent economic variable. The artists stepping up the way Shaggy and Sean Paul did — that\'s a Caribbean tradition. Community over government. But that can\'t be the long-term plan.',
+      source: 'Caribbean Development Bank', url: 'https://www.caribank.org/newsroom/news-and-events/caribbean-economies-face-modest-growth-2026-amid-global-uncertainty-cdb',
+      date: 'Mar 3, 2026', angle: '🌀 Recovery'
+    },
+    {
+      headline: 'Aircraft Fuel Handlers at Norman Manley Airport Restive Over Wage Negotiations',
+      snippet: 'Fuel handlers employed by United Management Services say wage and fringe benefit negotiations have been outstanding since January 2025. Union insists the petroleum sector\'s profitability warrants better compensation.',
+      brief: 'Fuel handlers at Norman Manley International Airport in Kingston have been locked in a tense wage dispute with United Management Services since early 2025. The union representing workers argues that while the petroleum sector has posted strong profits, the workers handling fuel on the tarmac haven\'t seen meaningful wage increases in over a year. The dispute has not yet led to industrial action but the threat looms over one of Jamaica\'s most strategically important transport hubs. Airport fuel disruptions can cascade quickly — affecting airlines, tourism, and cargo — making this a higher-stakes standoff than it might initially appear.',
+      host30: 'This is the classic gig economy problem but at critical infrastructure. These workers are essential, but they\'re employed through a contractor — not the airport, not the airline — so nobody wants to own the negotiation. How does that change when the threat to public safety becomes real?',
+      host65: 'Labour disputes at airports aren\'t new, but the structure of who employs who has changed dramatically. When I was young, airport workers were government employees with clear union rights. Now you have layers of contractors. That complexity is deliberate — it weakens bargaining power.',
+      source: 'Real News Media TV', url: 'https://www.youtube.com/watch?v=Qt-H4esNBWA',
+      date: 'Mar 13, 2026', angle: '✈️ Labour'
+    },
+    {
+      headline: 'Digicel Foundation Donates US$80,000 Smart Lab to Church Teachers\' College',
+      snippet: 'A state-of-the-art Smart Lab handed over in Mandeville, Manchester, as part of Digicel\'s push to strengthen teacher preparation and accelerate digital transformation in Jamaica\'s education system.',
+      brief: 'Digicel Foundation\'s donation of an US$80,000 Smart Lab to Church Teachers\' College in Mandeville represents more than a CSR gesture — it\'s part of a deliberate strategy to digitize teacher training at scale. The Smart Lab equips future teachers with modern tools: interactive displays, cloud-based learning platforms, and hands-on tech environments. The logic is clear: you can\'t digitally transform a school system without first digitally transforming the teachers who run it. Jamaica\'s education sector has faced years of underfunding, and private sector partnerships like this one are filling gaps that public budgets cannot. Whether this model is sustainable and scalable across the island remains the key question.',
+      host30: 'It\'s a cool initiative but $80K for one college — is this scaling? Jamaica has hundreds of schools that still don\'t have reliable internet. Corporate donations help but they\'re not a substitute for a national digital education strategy.',
+      host65: 'When I was a teacher, we had chalk and textbooks. What Digicel is doing here is genuinely transformative for those students. But I agree — one Smart Lab doesn\'t solve the systemic problem. The government needs to match this energy with policy and funding.',
+      source: 'ICT Pulse', url: 'https://ict-pulse.com/2026/03/roundup-for-the-week-ending-1-march-2026/',
+      date: 'Feb 27, 2026', angle: '📚 Education'
+    }
+  ],
+  tt: [
+    {
+      headline: 'T&T Goes Paperless: Online Arrival & Departure Card System Launches March 17',
+      snippet: 'Travelers to Trinidad and Tobago will no longer fill out paper immigration forms. The new digital platform allows passengers to complete their arrival/departure card online before traveling — a long-awaited modernization.',
+      brief: 'Starting March 17, 2026, travelers to Trinidad and Tobago will complete their immigration arrival and departure cards entirely online before boarding their flight. The system replaces the paper forms that have been standard practice for decades and mirrors similar digital immigration systems in place at airports in the US, UK, and across Europe. For a country that positions itself as the Caribbean\'s commercial and cultural hub, this modernization is symbolically and practically significant. It reduces processing times at immigration, cuts paper costs, and feeds into a broader government push toward e-governance. The platform integrates with airline check-in systems, allowing pre-approval before passengers even land.',
+      host30: 'This is exactly the kind of frictionless digital experience that makes a country feel like it\'s moving forward. Pre-filling your immigration form like online check-in — that\'s just expected now. The real test is whether the back-end data systems are actually secure and modern or if it\'s just a nice front end.',
+      host65: 'I\'ve filled out those paper cards at every Caribbean airport for 40 years. It\'s a small thing but it signals a mindset shift. T&T is saying: we want to run a modern state. The challenge is consistency — technology announced and technology actually working are two different things in the Caribbean.',
+      source: 'TTT News / CNC3', url: 'https://www.facebook.com/tttliveonline/videos/ttt-news-at-noon-friday-13th-march-2026/1254771246139373/',
+      date: 'Mar 12, 2026', angle: '🛂 Digital Gov'
+    },
+    {
+      headline: 'Parliament Passes Digital Law Publication Amendment — Saving Millions on Overseas Printing',
+      snippet: 'T&T\'s laws will now be officially published online alongside printed volumes. The amendment was piloted by the Minister of Land and Legal Affairs and received support from both government and opposition senators.',
+      brief: 'Trinidad and Tobago\'s parliament has passed an amendment requiring laws to be officially published online, ending the long-standing practice of sending legal documents overseas for printing at significant cost. The amendment had bipartisan support — a rarity in T&T politics — reflecting how clearly practical and financially sensible the change is. Official legal publication is about more than cost savings: it\'s about accessibility. When laws are online, citizens, journalists, lawyers, and civil society organizations can search, cite, and hold government accountable far more easily than with printed volumes stored in government offices. It\'s a foundational step toward a more transparent state.',
+      host30: 'Wait — they were printing their laws *overseas*? That\'s the story. The fact that digital publication is being celebrated in 2026 tells you how behind these systems were. But better late than never — now the question is whether the public actually engages with laws being online.',
+      host65: 'Access to law is access to justice. When I started my career, finding the latest version of a law meant going to a specific government building during specific hours. Making legislation searchable online is genuinely democratizing — but we also need legal literacy programs so people know how to use it.',
+      source: 'Trinidad & Tobago Today', url: 'https://www.youtube.com/watch?v=wms',
+      date: 'Mar 12, 2026', angle: '⚖️ Governance'
+    },
+    {
+      headline: 'T&T Coast Guard Coordinates Regional Search for Overdue Vessel Bound for SVG',
+      snippet: 'A 29 ft vessel that departed Buku, Tobago on March 2nd bound for Union Island, St. Vincent never arrived. Aerial searches by T&T Air Guard and port checks with Grenada and SVG Coast Guards ongoing.',
+      brief: 'A 29-foot vessel that departed Buku Bay, Tobago on March 2nd bound for Union Island in the Grenadines never arrived at its destination. The T&T Coast Guard has coordinated a regional search involving aerial surveillance from T&T\'s Air Guard wing, plus port authority checks across Grenada and St. Vincent and the Grenadines. The search highlights the inherent risks of inter-island sea travel in the Eastern Caribbean — open water crossings that local mariners make routinely but that carry serious danger in poor weather or mechanical failure. It also spotlights the relatively thin infrastructure for maritime search and rescue across small island states.',
+      host30: 'Inter-island boat travel is still the reality for hundreds of thousands of people across the Caribbean — it\'s not a tourist thing, it\'s how people move. The question is why we still don\'t have better real-time vessel tracking for small craft. The technology exists.',
+      host65: 'The sea has always taken people in the Caribbean. This is an old story with a new urgency because we now have the tools to prevent it — GPS trackers, satellite communication, regional Coast Guard coordination. The gap is political will and funding for maritime safety infrastructure.',
+      source: 'Trinidad & Tobago Today', url: 'https://www.youtube.com/watch?v=hWYqaKH8wms',
+      date: 'Mar 12, 2026', angle: '🚤 Maritime'
+    },
+    {
+      headline: 'PM Kamla Prasad-Bisessar Returns After Participating in International Shield Forum',
+      snippet: 'The Prime Minister returned home following high-level participation in international diplomacy. T&T has named a 92-member delegation including 74 athletes for upcoming regional and international competitions.',
+      brief: 'Prime Minister Kamla Prasad-Bisessar returned to T&T following participation in the International Shield Forum, a high-level diplomatic gathering focused on regional security and economic cooperation. Her attendance signals T&T\'s continued ambitions as a diplomatic voice for the English-speaking Caribbean. Separately, the government announced a 92-member national delegation — including 74 athletes — for upcoming regional and international competitions, reflecting T&T\'s strong sporting culture alongside its diplomatic activity. The combination of sports diplomacy and formal international engagement is a consistent thread in T&T\'s soft power strategy.',
+      host30: 'T&T has always punched above its weight on the world stage — Brian Lara, Hasley Crawford, Ato Boldon. 74 athletes in one delegation is a statement. But I\'d love to know more about what the "Shield Forum" actually produced — was it policy substance or just optics?',
+      host65: 'Kamla returning to leadership is itself a story. T&T politics have a way of cycling through familiar names. The International Shield Forum is new — it suggests a shifting security landscape in the region. Small island diplomacy has always mattered more than the world gives it credit for.',
+      source: 'TTT News', url: 'https://www.facebook.com/tttliveonline/videos/ttt-news-at-noon-friday-13th-march-2026/1254771246139373/',
+      date: 'Mar 13, 2026', angle: '🏛️ Politics'
+    },
+    {
+      headline: 'Liberty Caribbean & AWS Sign 5-Year Cloud Transformation Agreement',
+      snippet: 'Liberty Latin America (operators of Flow) and Amazon Web Services sign a strategic collaboration to accelerate cloud and AI adoption across Latin America and the Caribbean, with data residency compliance.',
+      brief: 'Liberty Latin America — the parent company of Flow, one of the Caribbean\'s dominant telecoms — has signed a five-year strategic collaboration agreement with Amazon Web Services to accelerate cloud migration and AI adoption across the region. The deal includes data residency compliance, meaning customer data can be kept within regional jurisdictions — a major concern for Caribbean governments and enterprises cautious about sovereignty over their data. The partnership could meaningfully change the technology landscape for Caribbean businesses, providing access to enterprise-grade cloud infrastructure through a telco they already trust. The AI component signals that both companies expect AI tooling to become a standard part of Caribbean business operations within the agreement\'s lifetime.',
+      host30: 'AWS partnering with Flow is huge — it means AI and cloud tools get distributed through the same pipes everyone already has. Data residency compliance is the real win here. Caribbean data staying in the Caribbean is something we should be demanding from every tech company operating in our markets.',
+      host65: 'I remember when Flow was just a phone company. Now they\'re brokering AI agreements with Amazon. The Caribbean telecom sector has transformed completely. The question I always ask: who owns the infrastructure? Because whoever owns the pipes owns the future.',
+      source: 'ICT Pulse', url: 'https://ict-pulse.com/2026/03/roundup-for-the-week-ending-1-march-2026/',
+      date: 'Feb 27, 2026', angle: '☁️ Tech'
+    }
+  ],
+  guyana: [
+    {
+      headline: 'Guyana\'s Oil Economy Takes Centre Stage on BBC World Questions',
+      snippet: 'BBC World Questions featured Guyana\'s rapid oil-driven growth as a global conversation topic. The World Bank projects Guyana to lead Caribbean expansion, with growth exceeding 20% projected for 2026.',
+      brief: 'Guyana\'s oil-driven economic transformation has become such a prominent global story that it earned a feature segment on BBC World Questions — a programme typically focused on Europe and North America. With World Bank projections showing over 20% GDP growth for 2026, Guyana\'s numbers are extraordinary by any global standard. The country went from one of South America\'s poorest nations to one of the world\'s fastest-growing economies in under a decade following ExxonMobil\'s offshore oil discoveries. The BBC segment probed both the promise and the peril: currency pressure, Dutch Disease risk, infrastructure lag, and inequality between Georgetown and rural communities.',
+      host30: 'Guyana is the Caribbean\'s most dramatic economic story right now — and honestly most people in the region aren\'t paying enough attention to it. 20% growth is a transformation, not just a number. The question is whether the wealth is actually reaching regular Guyanese or just sitting in government accounts and oil company balance sheets.',
+      host65: 'I\'ve seen oil wealth stories before — Trinidad in the 70s and 80s. The boom was real and then the bust was real. Guyana is in the boom right now, and to their credit they\'re trying to build a Sovereign Wealth Fund. But the political pressures to spend now are enormous. History is watching.',
+      source: 'Guyana News Source', url: 'https://www.youtube.com/watch?v=rLOIpRiyCwo',
+      date: 'Mar 11, 2026', angle: '🛢️ Oil & Economy'
+    },
+    {
+      headline: 'Venezuela Objects to Guyana\'s Planned 3D Seismic Exploration in Disputed Waters',
+      snippet: 'Escalating tensions as Venezuela formally objects to Guyana\'s seismic survey plans in waters both nations claim. The dispute centres on the Essequibo territory — a flashpoint with major oil implications.',
+      brief: 'Venezuela has filed a formal objection to Guyana\'s plans to conduct 3D seismic exploration in waters that both nations claim as their own. The dispute is rooted in the long-running Essequibo territorial conflict — Venezuela claims roughly two-thirds of Guyana\'s land mass as its own territory, a claim Guyana and the international community reject. The discovery of massive oil deposits in the disputed offshore zone has dramatically raised the stakes. The ICJ is handling the territorial case, but Venezuela\'s formal objection to seismic exploration suggests it is willing to escalate pressure through diplomatic and legal channels rather than wait for a court ruling. The situation carries genuine risk of regional destabilization.',
+      host30: 'This is the kind of conflict that most people in the Caribbean don\'t follow closely but absolutely should. It\'s a live territorial dispute with oil, international law, and a nationalist Venezuelan government all in the mix. If this escalates it affects the entire region.',
+      host65: 'The Essequibo dispute has been simmering for generations. What\'s changed is that there\'s now $100 billion in oil at stake. Venezuela under Maduro\'s government has shown it will use border tensions as a political distraction domestically. CARICOM needs a unified position on this — silence is not neutral.',
+      source: 'Guyana News Source', url: 'https://www.youtube.com/watch?v=EFvwAa07cRA',
+      date: 'Mar 12, 2026', angle: '🗺️ Territory Dispute'
+    },
+    {
+      headline: 'Government to Maintain 0% Excise Tax on Gasoline & Diesel Throughout 2026',
+      snippet: 'Despite global price volatility, Guyana\'s government confirms it will shield consumers from fuel cost increases by maintaining the 0% excise tax on gas and diesel for the full year.',
+      brief: 'Guyana\'s government has confirmed it will maintain the 0% excise tax on gasoline and diesel for the entire year of 2026, directly shielding consumers from global oil price volatility. The policy is politically popular and economically feasible precisely because Guyana is now an oil-producing nation — the irony of an oil exporter using its production revenue to keep domestic fuel prices low is not lost on regional observers. Critics argue the subsidy discourages investment in renewable energy and EV infrastructure, while proponents say it\'s a direct, immediate way to distribute oil wealth to ordinary Guyanese. The policy also acts as an inflation buffer at a time when the economy is growing rapidly and cost-of-living pressures are rising.',
+      host30: 'A 0% fuel tax is a blunt instrument for wealth distribution — it benefits everyone equally regardless of income, which means the rich benefit just as much as the poor. From a climate perspective it\'s also going the wrong direction. There are smarter ways to share oil revenues.',
+      host65: 'When oil money came to Trinidad in the 70s, the government subsidized almost everything. People called it "the good times." Then the oil price dropped and everything collapsed overnight because the productive economy had atrophied. Guyana needs to be very careful about creating dependency on cheap energy.',
+      source: 'Guyana News Update', url: 'https://www.youtube.com/watch?v=qLVJXGrnaOc',
+      date: 'Mar 13, 2026', angle: '⛽ Energy Policy'
+    },
+    {
+      headline: 'Biometric National ID Rollout Raises Data Privacy Concerns',
+      snippet: 'As Guyana rolls out biometric national IDs promising faster services, critics are questioning who controls the data, especially as Guyana\'s oil wealth makes it a more prominent geopolitical target.',
+      brief: 'Guyana\'s national rollout of biometric identification cards is moving forward, promising faster government services, reduced fraud, and a more integrated national identity infrastructure. But civil society organizations and legal experts are raising pointed questions about data governance: who controls the biometric database, what foreign tech companies are involved in building it, what cybersecurity standards apply, and what legal recourse citizens have if their data is misused. The concerns are amplified by Guyana\'s newfound geopolitical prominence as an oil state — making its national databases potentially attractive targets for state-sponsored cyber operations. The government has responded that international standards are being followed, but has not released detailed technical documentation.',
+      host30: 'Biometric ID is coming to most of the Caribbean — the question is whether it\'s done right. Who built the system, who hosts the data, what encryption standard? In an age of state-level hacking, Guyana\'s oil wealth makes it a target. This deserves real scrutiny, not just a government press release.',
+      host65: 'National ID systems have a complicated history. In the wrong hands they become tools of surveillance and control. In the right hands they genuinely improve access to services for vulnerable people. The difference is governance and oversight. Does Guyana have the institutional capacity to protect this data? That\'s the real question.',
+      source: 'Caribbean World Magazine', url: 'https://caribbeanworld-magazine.com/travel-trade/home/what-s-up-in-the-caribbean-march-2026-culture-events-and-buzz-across-the-islands/',
+      date: 'Mar 11, 2026', angle: '🔐 Data & Rights'
+    }
+  ],
+  sxm: [
+    {
+      headline: 'Sint Maarten & Saint Martin Sign Historic Maritime Counter-Drug Treaty',
+      snippet: 'Prime Minister Dr. Luc Mercilina and French Minister Naïma Moutchou signed an agreement giving Dutch and French law enforcement mutual right of pursuit during maritime drug operations across shared waters.',
+      brief: 'Sint Maarten (Dutch) and Saint Martin (French) have signed a landmark maritime counter-drug treaty giving law enforcement from both sides the legal right to pursue suspects across the shared island\'s waters without stopping to obtain formal permission. The island of Sint Maarten/Saint Martin is unique in the world — one island, two nations, no hard border. This legal reality has historically created enforcement gaps that criminal organizations have exploited. Prime Minister Dr. Luc Mercilina and French Minister Naïma Moutchou signed the agreement in a ceremony that emphasized the shared nature of the island\'s challenges. The treaty represents years of negotiation and a genuine commitment to binational governance on a place that has no real equivalent.',
+      host30: 'SXM is genuinely one of the most interesting political experiments in the world — one island, two countries, two legal systems, one community. This treaty is pragmatic and overdue. The real story is how they\'ve managed to govern a shared island for centuries and what the rest of the world can learn from it.',
+      host65: 'I know Sint Maarten well. The French side and Dutch side have always had a complicated relationship — culturally unified but legally divided. This treaty fills a hole that drug traffickers have used for decades. Credit to both governments for getting it done. It won\'t solve everything but it matters.',
+      source: '721 News', url: 'https://www.721news.com/2026/03/treaty-signed-between-sint-maarten-and-saint-martin-allowing-maritime-counter-operations/',
+      date: 'Mar 11, 2026', angle: '🤝 Binational Deal'
+    },
+    {
+      headline: 'Government Warns Tourists About Third-Party Websites Charging Fees for Free Entry Forms',
+      snippet: 'Sint Maarten issues a public warning about unauthorized platforms misrepresenting themselves and charging fees to process the free ED digital entry form. Official site: www.entry.sx — no fee required.',
+      brief: 'The Sint Maarten government has issued a public warning after multiple tourists reported being charged fees by third-party websites to process the Electronic Data (ED) entry form — which is entirely free on the official government portal at www.entry.sx. The scam follows a familiar pattern seen across the Caribbean and globally: unofficial websites mimic government portals, rank high in search results, and charge processing fees that go directly to scammers. For Sint Maarten, whose economy is almost entirely tourism-dependent, the reputational risk of tourists having a bad pre-arrival experience is real. The government is urging airlines and travel agents to communicate the official URL clearly to all incoming visitors.',
+      host30: 'This is a digital literacy and SEO problem at the same time. The scam sites rank above the real government site on Google. The government needs to either invest in proper digital marketing or pressure Google to delist fraudulent sites. This is hurting tourism before people even land.',
+      host65: 'Con artists have always found ways to intercept people at checkpoints. This is just the digital version of the guy at the airport offering to "help" you with your forms. The education piece is critical — and the government warning is the right move, but it needs to reach tourists before they start searching.',
+      source: 'Yahoo Finance / Business Wire', url: 'https://finance.yahoo.com/news/sint-maarten-government-issues-public-164800953.html',
+      date: 'Feb 25, 2026', angle: '⚠️ Consumer Alert'
+    },
+    {
+      headline: 'Centrale Bank van Curaçao en Sint Maarten Targets Fully Data-Driven Operations by 2028',
+      snippet: 'CBCS announces a far-reaching digital transformation plan positioning the shared central bank as fully data-driven by 2028 — including AI-assisted regulatory processes.',
+      brief: 'The Centrale Bank van Curaçao en Sint Maarten (CBCS) — the shared central bank for two of the Kingdom of the Netherlands\' Caribbean territories — has announced a comprehensive digital transformation roadmap with a 2028 target for fully data-driven operations. The plan includes AI-assisted regulatory monitoring, automated financial analysis, and modernized payment systems infrastructure. For small island central banks, this kind of transformation is particularly significant because the institutions have limited staff but oversee complex financial sectors including international banking, insurance, and increasingly, crypto-adjacent fintech. The CBCS\'s move signals that Dutch Caribbean financial governance is serious about keeping pace with global regulatory modernization.',
+      host30: 'A central bank using AI for regulatory monitoring is actually a big deal that\'s being underreported. Financial regulation is incredibly data-intensive — AI can spot patterns in transaction flows that human examiners would miss. For small islands this could level the playing field against sophisticated financial crime.',
+      host65: 'Central banks don\'t make announcements like this lightly. When the CBCS says data-driven by 2028, they\'ve committed to a transformation of their entire internal culture, not just their software. The question is whether the talent and institutional knowledge to execute that plan actually exists in-house.',
+      source: 'ICT Pulse', url: 'https://ict-pulse.com/2026/03/roundup-for-the-week-ending-1-march-2026/',
+      date: 'Feb 26, 2026', angle: '🏦 Finance Tech'
+    }
+  ],
+  svg: [
+    {
+      headline: 'SVG Minister Identifies Marina Development as Key Path to Economic Growth',
+      snippet: 'Minister Shallow says Marina Development in St. Vincent and the Grenadines represents a viable economic diversification strategy, pointing to the Grenadines\' appeal for sailing tourism and private yachting.',
+      brief: 'St. Vincent and the Grenadines\' Minister Shallow has publicly identified marina and sailing infrastructure development as a priority economic diversification strategy for the country. The Grenadines — a chain of small islands stretching south toward Grenada — are among the most celebrated sailing waters in the world, attracting private yachts, charter boats, and sailing enthusiasts year-round. Yet the marina infrastructure has long lagged behind the demand. Upgrading and expanding marinas in key locations like Bequia, Mustique, and Union Island could attract higher-spending visitors, create skilled marine service jobs, and diversify an economy that still depends heavily on banana exports and standard resort tourism.',
+      host30: 'The Grenadines are genuinely world-class sailing waters — this should have happened 20 years ago. But the opportunity is still there. The key is whether marina development serves the local economy or just creates more enclaves for wealthy yacht owners who spend money on the boat and not on shore.',
+      host65: 'SVG has been trying to find its economic footing for decades. The Grenadines were always the jewel but the infrastructure never matched the beauty. Marina development is the right instinct but it has to be done with community ownership at the centre or it just becomes another form of extraction.',
+      source: 'NBC Radio SVG', url: 'https://www.nbcsvg.com/2026/03/12/',
+      date: 'Mar 12, 2026', angle: '⚓ Development'
+    },
+    {
+      headline: 'OECS Hosts Regional Cybersecurity Policy Workshop in St. Vincent',
+      snippet: 'A three-day workshop hosted by the OECS Commission in SVG focused on developing a regional Cybersecurity Policy Framework — a critical step toward harmonizing digital security standards across member states.',
+      brief: 'The Organisation of Eastern Caribbean States hosted a three-day cybersecurity policy workshop in St. Vincent, bringing together government officials, technical experts, and civil society representatives from across its member states. The goal: develop a harmonized regional Cybersecurity Policy Framework that smaller islands can adopt and adapt without having to build policy expertise from scratch. For nations like SVG, Grenada, Dominica, and St. Kitts, cybersecurity policy is an expensive and specialized capability they cannot easily develop independently. A regional framework reduces duplication, pools expertise, and creates consistent standards that could attract tech investment and signal institutional maturity to international partners.',
+      host30: 'This is smart regionalism — pooling cybersecurity policy expertise because no single small island can afford to maintain it alone. The OECS model works when members actually implement what they agree on. The follow-through is always the question. Who enforces the framework once it\'s written?',
+      host65: 'Cybersecurity is the new coastguard for the digital age. Small islands were always at the mercy of larger powers when it came to physical security. The same dynamic is playing out digitally. Regional cooperation on this isn\'t optional — it\'s survival.',
+      source: 'NBC Radio SVG', url: 'https://www.nbcsvg.com/2026/03/12/',
+      date: 'Mar 12, 2026', angle: '🔒 Cybersecurity'
+    },
+    {
+      headline: 'St. Vincent PM: Government Did Not Authorize U.S. Drone Strike in Caribbean Waters',
+      snippet: 'The Prime Minister of SVG publicly clarified that his government did not authorize a recent U.S. drone operation in Caribbean territorial waters, underscoring ongoing tensions around foreign military presence in the region.',
+      brief: 'St. Vincent and the Grenadines Prime Minister Ralph Gonsalves publicly stated that his government did not authorize a recent U.S. drone operation that took place in Caribbean territorial waters. The statement is pointed and politically significant: it directly challenges the assumption that Caribbean governments are passive bystanders when it comes to U.S. military operations in the region. The operation reportedly targeted drug trafficking routes, but the SVG government\'s refusal to endorse it retroactively signals a shift in how small Caribbean nations are asserting their sovereignty — even in the face of pressure from a powerful ally. The incident has sparked a wider regional conversation about consent, sovereignty, and the limits of the U.S.-Caribbean security relationship.',
+      host30: 'This is huge and underreported. A Caribbean PM publicly saying "we didn\'t authorize this" to U.S. military activity is a direct sovereignty statement. In the age of social media, small nations can actually amplify these statements globally. How does this reshape the U.S.-Caribbean security relationship?',
+      host65: 'Caribbean sovereignty has always been complicated by geography and power dynamics. The U.S. has operated in Caribbean waters as if it owns them for over a century. Gonsalves pushing back publicly is brave — and it\'s not the first time he\'s done it. The question is whether CARICOM backs him up collectively.',
+      source: 'Caribbean World Magazine', url: 'https://caribbeanworld-magazine.com/travel-trade/home/what-s-up-in-the-caribbean-march-2026-culture-events-and-buzz-across-the-islands/',
+      date: 'Mar 11, 2026', angle: '✈️ Sovereignty'
+    },
+    {
+      headline: 'Police Call for Collaborative Approach to Tackle Violence in Schools',
+      snippet: 'Assistant Commissioner Trevor Bailey says a collaborative, whole-of-community approach is needed to address the rising incidents of violence within SVG\'s school system.',
+      brief: 'Assistant Commissioner of Police Trevor Bailey has issued a public call for a whole-of-community approach to tackle what he describes as rising violence in St. Vincent\'s school system. The call comes after a series of incidents that have alarmed parents and educators. Bailey\'s framing — that this is not solely a policing problem but a community and family one — reflects a broader shift in how Caribbean law enforcement is talking about youth violence. Schools are microcosms of social stress: family instability, economic pressure, and gang recruitment all manifest inside classrooms. SVG is not unique in this challenge, but the public statement from senior police is notable for its candor.',
+      host30: 'School violence in the Caribbean is a symptom of deeper systemic issues — poverty, broken families, lack of youth programming, social media dynamics. Putting more police in schools is a band-aid. What\'s the investment in mental health services, after-school programs, and community infrastructure?',
+      host65: 'When I was growing up, the school and the community were the same thing. Teachers knew your family. The breakdown of that social fabric is what\'s feeding violence in schools today. The Assistant Commissioner is right that police alone can\'t fix this — but who leads the community response? That\'s the gap.',
+      source: 'NBC Radio SVG', url: 'https://www.nbcsvg.com/2026/03/12/',
+      date: 'Mar 12, 2026', angle: '🏫 Social'
+    }
+  ],
+  dr: [
+    {
+      headline: 'DR Signs NVIDIA Deal for AI Center of Excellence — Joins US, South Korea & Singapore',
+      snippet: 'President Abinader announces a landmark NVIDIA partnership to build an AI Center of Excellence in the Dominican Republic, placing it in an elite group of nations with direct NVIDIA strategic agreements.',
+      brief: 'The Dominican Republic has signed a landmark agreement with NVIDIA to build an AI Center of Excellence — placing it alongside the United States, South Korea, and Singapore as nations with direct NVIDIA strategic partnerships. President Abinader announced the deal as part of an aggressive technology positioning strategy that aims to make the DR the Caribbean\'s undisputed tech hub. The Center of Excellence will train AI researchers, support local startups, and anchor foreign tech investment. NVIDIA\'s involvement signals serious credibility — the company is extraordinarily selective about these partnerships, and the DR joining that list is an extraordinary statement about how the country is being perceived as an emerging tech destination.',
+      host30: 'DR securing an NVIDIA AI partnership is genuinely elite company — they\'re on a list with the US, South Korea, and Singapore. For the Caribbean, this is a landmark. The question is whether it creates a domestic tech ecosystem or just becomes a foreign company\'s regional outpost.',
+      host65: 'I\'ve watched the Dominican Republic transform economically over my lifetime. From sugar and tourism to now positioning as a tech hub — it\'s remarkable. The NVIDIA deal is real capital and real credibility. But every Caribbean development story has a "who benefits" question that needs answering.',
+      source: 'De Último Minuto', url: 'https://deultimominuto.net/en/technology/from-ai-centers-of-excellence-to-launching-satellites-dr-prepares-to-take-a-big-leap-as-a-technological-and-innovation-hub-in-the-caribbean/',
+      date: 'Feb 27, 2026', angle: '🤖 AI'
+    },
+    {
+      headline: 'Google Invests $500M+ to Build Latin America\'s First Digital Exchange International Port in DR',
+      snippet: 'Google\'s investment includes a world-class data hub, submarine cables connecting to U.S. data centers, and positions the DR as Google\'s Caribbean gateway — the only Digital Exchange International Port in the hemisphere.',
+      brief: 'Google has committed over $500 million to build the first Digital Exchange International Port in Latin America and the Caribbean — located in the Dominican Republic. The investment includes a major data hub, new submarine cable connections linking directly to U.S. data centers, and supporting infrastructure that positions the DR as Google\'s official Caribbean gateway. This is not a corporate social responsibility gesture — it\'s strategic infrastructure investment of the highest order. Data traffic routing, latency reduction for Caribbean and Latin American users, and digital sovereignty implications all flow from where these cables land. The DR government has successfully argued that geographic positioning, political stability, and an improving regulatory environment make it the right choice.',
+      host30: 'A $500M Google infrastructure investment fundamentally changes what\'s possible for digital business in the Caribbean. Lower latency, better connectivity, a reason for tech companies to set up regional operations nearby. But Google doesn\'t do anything without getting something back — what are the data implications for Caribbean users?',
+      host65: 'Control over submarine cables is control over communication. The British understood this in the 19th century — that\'s why they laid cables across the Empire. Google is doing the 21st century version. The DR benefits enormously but it also becomes dependent. That\'s a strategic reality every Caribbean government needs to understand.',
+      source: 'De Último Minuto', url: 'https://deultimominuto.net/en/technology/from-ai-centers-of-excellence-to-launching-satellites-dr-prepares-to-take-a-big-leap-as-a-technological-and-innovation-hub-in-the-caribbean/',
+      date: 'Feb 27, 2026', angle: '🌐 Infrastructure'
+    },
+    {
+      headline: '$600M Commercial Spaceport Planned for Pedernales Province — Satellite by May 2028',
+      snippet: 'The DR signs a deal with LOD Holdings for a commercial spaceport in Oviedo, Pedernales. Former NASA Director Burton Catledge leads the project, with a satellite or rocket launch targeted before May 2028.',
+      brief: 'The Dominican Republic has signed an agreement with LOD Holdings to develop a commercial spaceport in Oviedo, Pedernales Province — a $600 million project led by former NASA Director Burton Catledge that aims to achieve a satellite or rocket launch before May 2028. The project represents an audacious bet on the Caribbean as a space economy participant. Pedernales\' geographic positioning near the equator is a genuine technical advantage for rocket launches — equatorial launches require less fuel to reach orbit. The DR is following a global trend of emerging economies entering the commercial space sector not as passive consumers of satellite services, but as active participants in the industry that provides them.',
+      host30: 'A Caribbean spaceport sounds like a headline but the equatorial geography makes it genuinely competitive — cheaper launches, better orbital mechanics. If this is real and not just a press release, it could redefine what economic development looks like for the Caribbean in the next 20 years.',
+      host65: 'Space was always for superpowers when I was young. Now we\'re talking about a rocket launch from the Dominican Republic. I want to believe it — the ambition is right. The execution is everything. Who are LOD Holdings, what\'s their track record, and is this backed by real capital or just a signed agreement?',
+      source: 'De Último Minuto', url: 'https://deultimominuto.net/en/technology/from-ai-centers-of-excellence-to-launching-satellites-dr-prepares-to-take-a-big-leap-as-a-technological-and-innovation-hub-in-the-caribbean/',
+      date: 'Feb 27, 2026', angle: '🚀 Space Economy'
+    }
+  ],
+  barbados: [
+    {
+      headline: 'CBC Barbados NewsNight: Latest Developments — March 2026',
+      snippet: 'Barbados continues steady economic growth driven by tourism recovery and offshore financial services, with government announcing new digital infrastructure projects.',
+      brief: 'CBC Barbados\' NewsNight coverage for March 2026 reflects a country in a confident if cautious moment. Tourism recovery is tracking ahead of pre-pandemic baselines, offshore financial services — a major contributor to government revenue — are stable, and the government has announced new digital infrastructure investments. Barbados under PM Mottley has cultivated a global image as a thoughtful, articulate small island state, and that brand carries real economic value in attracting both visitors and international business. The country\'s challenge is managing an ambitious reform agenda against limited fiscal space and the ever-present risk of climate disruption.',
+      host30: 'Barbados has a brand that punches well above its 280,000 population — Rihanna, the Bridgetown Initiative, the "Welcome Stamp" digital nomad visa. That brand brings real economic value. The question is whether the infrastructure and policy can keep up with the image they\'ve built.',
+      host65: 'Barbados has always been punching above its weight. When they became a Republic, the whole world was watching. Mottley has positioned the country as a moral voice on climate that larger nations are embarrassed to ignore. That kind of soft power is rare and valuable — but it doesn\'t pay the bills on its own.',
+      source: 'CBC Barbados', url: 'https://www.youtube.com/watch?v=XWtjk3yisUo',
+      date: 'Mar 8, 2026', angle: '📺 General News'
+    },
+    {
+      headline: 'Barbados Advances Climate-Resilient Infrastructure Investment Under the Bridgetown Initiative',
+      snippet: 'PM Mottley\'s Bridgetown Initiative continues to gain international traction, pushing multilateral banks to reform climate financing to make it more accessible for small island states facing existential threats.',
+      brief: 'The Bridgetown Initiative — PM Mia Mottley\'s landmark proposal for reforming global climate finance — continues to gain traction in 2026, with multilateral development banks beginning to operationalize reforms that make climate financing more accessible and affordable for small island developing states. The core argument of the Initiative is that the current international financial architecture was designed for a world that no longer exists, and that small island nations facing existential climate threats cannot take on more debt at commercial rates to finance climate adaptation. Mottley has successfully shifted the conversation at Davos, the G7, and the UN — the question is whether the institutional reforms move fast enough to matter.',
+      host30: 'The Bridgetown Initiative is genuinely one of the most important pieces of Caribbean policy thinking on the global stage in my lifetime. Mottley is making a systems-level argument, not just asking for aid. The world is listening — but is the money actually moving? That\'s the gap between a great speech and a great policy.',
+      host65: 'Caribbean leaders have been making arguments about global inequality at international forums since independence. What makes Mottley different is that she\'s come with a specific structural proposal, not just a grievance. Whether the G7 actually reforms the multilateral banks is the test. These institutions move very slowly.',
+      source: 'Caribbean Development Bank', url: 'https://www.caribank.org/newsroom/news-and-events/caribbean-economies-face-modest-growth-2026-amid-global-uncertainty-cdb',
+      date: 'Mar 3, 2026', angle: '🌱 Climate Finance'
+    }
+  ],
+  bahamas: [
+    {
+      headline: '\'Price Pal\' App Launched — Bahamas\' National Price Comparison Tool Across 230+ Stores',
+      snippet: 'The Bahamian government launches a national price-comparison app allowing citizens to check grocery and household prices across more than 230 stores, aiming to increase retail transparency and competition.',
+      brief: 'The Bahamian government has launched "Price Pal" — a national price-comparison app that allows citizens to check grocery and household product prices across more than 230 stores across the archipelago. The initiative is a direct response to the persistently high cost of living in the Bahamas, where imported goods are expensive and limited retail competition allows prices to stay elevated. By making prices transparent and comparable on a phone, the government aims to empower consumers and create soft competitive pressure on retailers. It\'s a tech-light solution to a structural economic problem — and whether it changes behaviour or just gives the government political cover is still to be determined.',
+      host30: 'Price comparison apps are table stakes in developed markets but this is actually meaningful in the Bahamas where retail competition is thin and information asymmetry benefits sellers. The real question is adoption — do people actually use it? And does it lead to real price drops or just marginal competition?',
+      host65: 'The cost of living in the Bahamas has always been a quiet crisis for ordinary people who aren\'t in the tourism economy. Nassau can feel like a wealthy city when you\'re looking at the resorts, but local grocery bills are brutal. An app won\'t fix the structural problem but transparency is always a good starting point.',
+      source: 'ICT Pulse', url: 'https://ict-pulse.com/2026/03/roundup-for-the-week-ending-1-march-2026/',
+      date: 'Feb 28, 2026', angle: '📱 Consumer Tech'
+    },
+    {
+      headline: 'Tomorrow.io AI Satellites Partner with BACSWN\'s WxSenseNet™ for Bahamas Aviation Weather',
+      snippet: 'The Bahamas Aviation weather centre will be powered by Tomorrow.io\'s AI-driven satellite weather system alongside WxSenseNet. The system promises next-generation weather data for aviation and emergency management.',
+      brief: 'The Bahamas Aviation, Climate, and Sea Weather Network (BACSWN) has partnered with Tomorrow.io, a leading AI-driven weather intelligence company, to integrate its satellite-based WxSenseNet™ system into Bahamian aviation weather forecasting and emergency management infrastructure. For an archipelago of 700 islands spread across 100,000 square miles of ocean, accurate, granular weather data is not a luxury — it is a survival necessity. The system promises dramatically improved hurricane track modelling, precipitation forecasting, and real-time sea state data. For aviation in particular, hyper-local weather intelligence reduces risk for the hundreds of small aircraft and seaplanes that connect the Bahamian island chain daily.',
+      host30: 'AI weather satellites for an archipelago nation makes perfect sense — the geography demands hyper-local forecasting that traditional weather stations can\'t provide. This is exactly the kind of climate adaptation tech the Caribbean should be building or procuring urgently. How does it integrate with emergency management systems?',
+      host65: 'I\'ve lived through enough Caribbean storms to know that the quality of the forecast changes everything. How early you evacuate, where you evacuate to, whether fishermen go out. AI-driven satellite data could genuinely save lives in the Bahamas. The question is whether the emergency management systems downstream are sophisticated enough to use it.',
+      source: 'ICT Pulse', url: 'https://ict-pulse.com/2026/03/roundup-for-the-week-ending-1-march-2026/',
+      date: 'Feb 27, 2026', angle: '🛰️ Aviation Tech'
+    }
+  ],
+  stlucia: [
+    {
+      headline: 'Saint Lucia Launches National Authentication Framework (NAF) — A Digital ID Milestone',
+      snippet: 'St. Lucia launches the NAF, a key step in its digital transformation journey enhancing identity security for citizens. Officials call it a defining moment for the country\'s digital future.',
+      brief: 'Saint Lucia has launched its National Authentication Framework (NAF), a standardized digital identity verification system that allows citizens to authenticate themselves securely for government services, financial transactions, and digital platforms using a single national identity infrastructure. The launch marks a significant step in St. Lucia\'s digital transformation agenda — consolidating what were previously fragmented identity systems into a coherent, secure framework. Officials described it as foundational infrastructure that other digital services can build on. Caribbean digital ID efforts have accelerated across the region as governments recognize that without trusted digital identity, e-government services cannot reach their potential.',
+      host30: 'Digital ID infrastructure is like broadband — invisible when it works, crippling when it doesn\'t. The NAF is the foundation layer that makes everything else possible. The interesting question is interoperability — can this eventually work across OECS member states so you\'re not re-verifying at every island?',
+      host65: 'I\'ve dealt with Caribbean government bureaucracy for decades — identity verification was always a paper exercise that could take hours or days. A national authentication framework is genuinely transformative for ordinary people accessing services. The privacy implications need watching, but the quality-of-life improvement is real.',
+      source: 'ICT Pulse', url: 'https://ict-pulse.com/2026/03/roundup-for-the-week-ending-1-march-2026/',
+      date: 'Feb 28, 2026', angle: '🪪 Digital ID'
+    },
+    {
+      headline: 'Saint Lucia Jazz & Arts Festival 2026 Lineup Announced',
+      snippet: 'The 2026 edition of the iconic Saint Lucia Jazz & Arts Festival promises an expanded lineup with international and Caribbean artists. The festival remains one of the Caribbean\'s top cultural events.',
+      brief: 'The 2026 Saint Lucia Jazz & Arts Festival has announced an expanded lineup featuring both international headliners and a deliberately stronger Caribbean artist contingent — a programming shift that reflects broader regional conversations about centering local talent at major festivals. The festival, held annually in May, draws visitors from across the world to the Pitons backdrop of Saint Lucia and is one of the most economically significant annual events for the island\'s tourism sector. Beyond the economic impact, the Jazz Festival has a cultural identity role: it signals that Saint Lucia is a place that takes art seriously, which attracts a different, often higher-spending tourist demographic.',
+      host30: 'The Saint Lucia Jazz Fest has always been a marquee event but the shift toward featuring more Caribbean artists is significant. For years these festivals brought in international names and local artists were support acts. Flipping that balance is a statement about cultural self-worth.',
+      host65: 'I remember when the Saint Lucia Jazz Festival was just starting. It transformed the island\'s cultural identity. Now it\'s an institution. The question every year is whether it stays true to the music or becomes purely a tourism product. The best festivals manage to be both — but that balance requires constant curation.',
+      source: 'Caribbean Hot 7', url: 'https://www.billboard.com/lists/caribbean-music-festivals-2026-guide-list-reggae-dancehall/',
+      date: 'Mar 2026', angle: '🎷 Culture'
+    }
+  ],
+  antigua: [
+    {
+      headline: 'CIBC Caribbean Launches Full Digital Business Banking Onboarding in Antigua & Barbuda',
+      snippet: 'Business banking clients in Antigua can now open accounts entirely online through CIBC Caribbean\'s new digital onboarding platform — a major convenience shift for small business owners.',
+      brief: 'CIBC Caribbean has launched a fully digital business banking onboarding platform in Antigua and Barbuda, allowing new business clients to open accounts, submit documentation, and complete compliance checks entirely online — without visiting a branch. For small business owners, this removes one of the most friction-heavy steps in formalizing a business: the multi-day, multi-visit bank account opening process that has long been a barrier to financial inclusion and business formalization across the Caribbean. The platform uses digital KYC (Know Your Customer) and document verification tools to meet regulatory requirements while removing physical barriers. CIBC Caribbean has signaled plans to roll out the platform across other markets.',
+      host30: 'Digital business banking onboarding sounds mundane but it\'s genuinely one of the biggest friction points for Caribbean entrepreneurs. You could have a great idea, a solid business plan, and it would take 2-3 weeks to open a bank account. Removing that barrier matters. The next question is whether lending follows the same digital modernization.',
+      host65: 'Banking in the Caribbean has always had a gatekeeping quality — the physical requirements, the documentation, the waiting. Small businesses have suffered for it. CIBC going digital for onboarding is a competitive move but it also has real development impact. When banking is easier to access, more people build formal businesses.',
+      source: 'ICT Pulse', url: 'https://ict-pulse.com/2026/03/roundup-for-the-week-ending-1-march-2026/',
+      date: 'Feb 26, 2026', angle: '🏦 FinTech'
+    }
+  ],
+  stkitts: [
+    {
+      headline: 'Digicel Launches State-of-the-Art Fiber Network on Nevis in 20th Anniversary Year',
+      snippet: 'Digicel officially launches fiber on Nevis, a milestone in the company\'s 20th anniversary celebrations. The rollout aims to bring high-speed internet to all communities on the island.',
+      brief: 'Digicel has officially launched a state-of-the-art fiber optic network on Nevis as part of its 20th anniversary celebrations in St. Kitts and Nevis. The rollout brings high-speed broadband to communities across the island that previously relied on slower copper or wireless infrastructure. For a small island economy like Nevis — which depends heavily on high-end tourism and offshore financial services — reliable high-speed internet is foundational infrastructure. Digicel\'s 20-year presence in the federation has been marked by significant infrastructure investment, and the fiber launch represents both a commercial upgrade and a genuine public benefit for residents who work remotely or rely on digital services.',
+      host30: 'Fiber on Nevis is overdue but welcome. The interesting question is the business model — is this purely commercial or did the government co-invest? Small island fiber rollouts often stall at the "last mile" economics problem where the density isn\'t there to make it profitable. How is Digicel solving that here?',
+      host65: 'I remember when Nevis got its first cellular tower. The island was transformed — communication, business, family connection. Fiber is the next generation of that same transformation. Digicel has earned some credit for consistently investing in markets that larger telecoms wouldn\'t touch.',
+      source: 'ICT Pulse', url: 'https://ict-pulse.com/2026/03/roundup-for-the-week-ending-1-march-2026/',
+      date: 'Feb 23, 2026', angle: '📡 Connectivity'
+    },
+    {
+      headline: 'SKN Smart Shopper App Now Free Download for All Devices',
+      snippet: 'The Department of Consumer Affairs launches the Smart Shopper app, giving St. Kitts residents the ability to compare prices and access consumer information directly from their phone.',
+      brief: 'The St. Kitts and Nevis Department of Consumer Affairs has launched the "Smart Shopper" app — a free price comparison tool available across iOS and Android that allows residents to compare grocery and household product prices across local retailers. The launch coincides with similar initiatives in the Bahamas (Price Pal), reflecting a region-wide recognition that cost of living transparency can be a meaningful consumer empowerment tool. St. Kitts has a relatively small retail market, which historically has limited competition and allowed prices to remain high. The app aims to shift information power toward consumers and nudge retailers toward more competitive pricing through visible comparison.',
+      host30: 'Two Caribbean price comparison apps launching at the same time — Bahamas and SKN — is not a coincidence. There\'s clearly a regional movement here, probably influenced by similar tools in the UK and Canada. The tech is simple. The challenge is getting local businesses to provide accurate, updated pricing data.',
+      host65: 'Consumer protection has always been underfunded in the Caribbean. When I was working, the "consumer affairs department" was often one or two people with no enforcement power. A free app that gives people price information is a small but practical step. The government is using technology to do what it couldn\'t do with staff.',
+      source: 'ICT Pulse', url: 'https://ict-pulse.com/2026/03/roundup-for-the-week-ending-1-march-2026/',
+      date: 'Feb 28, 2026', angle: '📲 Consumer'
+    }
+  ],
+  curacao: [
+    {
+      headline: 'Central Bank of Curaçao and Sint Maarten Charts Data-Driven Future Through 2028',
+      snippet: 'The CBCS announces a comprehensive digital transformation roadmap positioning itself as a fully AI-driven and data-centric central bank by 2028, covering regulatory monitoring and financial analysis.',
+      brief: 'The Centrale Bank van Curaçao en Sint Maarten (CBCS) has released its Digital Transformation Roadmap targeting fully data-driven operations by 2028. The roadmap covers AI-assisted regulatory compliance monitoring, automated financial sector analysis, modernized payment clearing systems, and enhanced supervisory reporting infrastructure. For a central bank operating across two distinct jurisdictions — Curaçao and Sint Maarten — digital integration is both a practical necessity and a governance improvement opportunity. The CBCS supervises banks, insurance companies, and pension funds across both territories, and the volume and complexity of that data has grown well beyond what traditional manual processes can effectively manage.',
+      host30: 'Central banks going AI-first is a global trend — but doing it at the scale of a small island central bank is genuinely interesting because the constraints are different. Smaller team, smaller budget, but potentially more agile. If CBCS pulls this off by 2028 they could be a model for similar institutions across the Caribbean.',
+      host65: 'The CBCS is responsible for financial stability across two islands with very different economies — Curaçao with its port and refinery economy, Sint Maarten with its tourism. AI tools that can monitor both simultaneously and flag systemic risk early are genuinely valuable. The question is always cybersecurity — a central bank\'s data is extraordinarily sensitive.',
+      source: 'ICT Pulse', url: 'https://ict-pulse.com/2026/03/roundup-for-the-week-ending-1-march-2026/',
+      date: 'Feb 26, 2026', angle: '🏦 Finance Tech'
+    }
+  ]
+};
+
+// Fallback for islands without specific data
+const FALLBACK_NEWS = (islandName) => [{
+  headline: `Latest news for ${islandName} — Check back soon`,
+  snippet: `Curated stories for ${islandName} are refreshed weekly. For live news, visit regional outlets including Loop News Caribbean, Caribbean National Weekly, and local broadcast stations.`,
+  source: 'Island Frequency', url: 'https://loopnewscaribbean.com',
+  date: 'This week', angle: '📰 General'
+}];
+
+/* ============================================================
+   ISLAND PICKER LOGIC
+   ============================================================ */
+
+function buildIslandGrid(containerId, islands) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  islands.forEach(island => {
+    const btn = document.createElement('button');
+    btn.className = 'island-btn';
+    btn.dataset.id = island.id;
+    btn.dataset.name = island.name;
+    btn.dataset.flag = island.flag;
+    btn.innerHTML = `
+      <span class="island-flag">${island.flag}</span>
+      <span class="island-name">${island.name}</span>
+      <span class="island-sub">${island.sub}</span>
+    `;
+    btn.addEventListener('click', () => selectIsland(island));
+    container.appendChild(btn);
+  });
+}
+
+buildIslandGrid('islandGrid', ISLANDS.greater);
+buildIslandGrid('islandGridEast', ISLANDS.eastern);
+buildIslandGrid('islandGridSouth', ISLANDS.southern);
+buildIslandGrid('islandGridDutch', ISLANDS.dutch);
+
+function selectIsland(island) {
+  // Deactivate all
+  document.querySelectorAll('.island-btn').forEach(b => b.classList.remove('active'));
+  // Activate selected
+  document.querySelectorAll(`.island-btn[data-id="${island.id}"]`).forEach(b => b.classList.add('active'));
+
+  const panel = document.getElementById('islandNewsPanel');
+  const container = document.getElementById('newsStoriesContainer');
+  const flag = document.getElementById('newsFlag');
+  const titleText = document.getElementById('newsTitleText');
+  const meta = document.getElementById('newsMeta');
+
+  flag.textContent = island.flag;
+  titleText.textContent = island.name + ' — Latest News';
+  meta.textContent = 'March 2026 · Updated weekly';
+
+  // Show panel with loading state
+  panel.classList.add('visible');
+  container.innerHTML = `
+    <div class="news-loading">
+      <div class="loading-spinner"></div>
+      <div class="loading-text">Loading ${island.name} stories…</div>
+    </div>
+  `;
+
+  // Simulate brief fetch delay then render
+  setTimeout(() => {
+    const stories = ISLAND_NEWS[island.id] || FALLBACK_NEWS(island.name);
+    container.innerHTML = '';
+    if (stories.length === 0) {
+      container.innerHTML = `
+        <div class="news-empty">
+          <div class="news-empty-icon">🌊</div>
+          <div class="news-empty-text">No stories yet for ${island.name}. Check back after the next refresh.</div>
+        </div>
+      `;
+      // Scroll to news panel after rendering empty state
+      const pickerPanel = document.querySelector('.island-picker-panel');
+      if (pickerPanel) pickerPanel.scrollTo({ top: panel.offsetTop - 16, behavior: 'smooth' });
+      return;
+    }
+    stories.forEach((story, i) => {
+      const el = document.createElement('div');
+      el.className = 'news-story';
+      const hasBrief = story.brief || story.host30 || story.host65;
+      el.innerHTML = `
+        <div class="story-num">${i + 1}</div>
+        <div class="story-body">
+          <div class="story-headline">${story.headline}</div>
+          <div class="story-snippet">${story.snippet}</div>
+          <div class="story-footer">
+            <span class="story-date">${story.date}</span>
+            <span class="story-angle">${story.angle}</span>
+            ${hasBrief ? `<button class="story-expand-btn" aria-label="Expand brief">Read Brief ↓</button>` : ''}
+          </div>
+          ${hasBrief ? `
+          <div class="story-brief-drawer">
+            ${story.brief ? `<p class="brief-body">${story.brief}</p>` : ''}
+            ${story.host30 || story.host65 ? `<div class="brief-angles">
+              ${story.host30 ? `<div class="brief-angle"><span class="brief-age-chip chip-30">30</span><span>${story.host30}</span></div>` : ''}
+              ${story.host65 ? `<div class="brief-angle"><span class="brief-age-chip chip-65">65</span><span>${story.host65}</span></div>` : ''}
+            </div>` : ''}
+            <a class="brief-read-link" href="${story.url}" target="_blank" rel="noopener noreferrer">Read full story on ${story.source} →</a>
+          </div>` : ''}
+        </div>
+      `;
+      // Toggle drawer on button click
+      el.querySelector('.story-expand-btn')?.addEventListener('click', () => {
+        el.classList.toggle('expanded');
+        const btn = el.querySelector('.story-expand-btn');
+        btn.textContent = el.classList.contains('expanded') ? 'Close ↑' : 'Read Brief ↓';
+      });
+      container.appendChild(el);
+      setTimeout(() => el.classList.add('visible'), i * 80 + 50);
+    });
+    // Scroll to news panel after stories are injected into DOM
+    requestAnimationFrame(() => {
+      const pickerPanel = document.querySelector('.island-picker-panel');
+      if (pickerPanel) pickerPanel.scrollTo({ top: panel.offsetTop - 16, behavior: 'smooth' });
+    });
+  }, 600);
+}
+
+// Open/close
+const pickerOverlay = document.getElementById('islandPickerOverlay');
+document.getElementById('openIslandPicker').addEventListener('click', () => {
+  pickerOverlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  // Reset scroll position on open
+  const pickerPanel = document.querySelector('.island-picker-panel');
+  if (pickerPanel) pickerPanel.scrollTop = 0;
+});
+function closePicker() {
+  pickerOverlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('closeIslandPicker').addEventListener('click', closePicker);
+pickerOverlay.addEventListener('click', (e) => {
+  if (e.target === pickerOverlay) closePicker();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closePicker();
+});
+
+</script>
+</body>
+</html>
