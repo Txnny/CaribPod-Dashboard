@@ -1,0 +1,37 @@
+name: Daily Podcast Topics Refresh
+
+on:
+  schedule:
+    # Runs every day at 8:00 AM EDT (12:00 UTC)
+    - cron: '0 12 * * *'
+  workflow_dispatch: # Manual trigger from GitHub Actions UI
+
+jobs:
+  refresh-topics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Fetch fresh Caribbean topics
+        env:
+          PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+        run: node fetch-topics.mjs
+
+      - name: Commit and push updated index.html
+        run: |
+          git config --global user.name "Island Frequency Bot"
+          git config --global user.email "bot@island-frequency.com"
+          git add index.html
+          git diff --staged --quiet || git commit -m "chore: daily topic refresh $(date +'%Y-%m-%d')"
+          git push
