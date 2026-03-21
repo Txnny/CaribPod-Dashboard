@@ -466,109 +466,196 @@
 // AUTO-UPDATE-START
 const TOPICS = [
   {
-    id: 1,
-    featured: true,
-    category: "dev",
-    categoryLabel: "Development",
-    hot: true,
-    title: "Caribbean's 2026 Economic Crossroads: Modest Growth vs. Climate Debt",
-    summary: "The Caribbean Development Bank projects just 1.1% GDP growth for 2026 (excluding Guyana) while Guyana itself rockets past 20%. Nine countries still carry debt above 60% of GDP. Meanwhile, hurricane damage continues to compound in Jamaica. Is the region at a turning point or stuck in a cycle?",
-    points: [
-      { age: "30", type: "young", text: "Guyana's oil wealth is creating a two-speed Caribbean — what does that mean for smaller islands trying to compete for FDI?" },
-      { age: "65", type: "elder", text: "We've heard promises of diversification for 50 years. The debt ceiling keeps rising — at what point does the region need a genuine structural reset?" }
+    "id": 1,
+    "featured": true,
+    "category": "tech",
+    "categoryLabel": "Tech",
+    "hot": true,
+    "title": "OECS & EC-RIA MoU Accelerates AI, Robotics Across Eastern Caribbean",
+    "summary": "OECS signed a landmark MoU with EC-RIA at CARICOM summit to boost robotics, AI, STEAM education, and innovation hubs region-wide. This partnership promotes youth entrepreneurship, inclusive tech access, and digital transformation for economic growth. Vital for Caribbean competitiveness in global tech race.",
+    "points": [
+      {
+        "age": "30",
+        "type": "young",
+        "text": "As a young host, I'd hype how this empowers Gen Z innovators with AI tools tailored to Caribbean culture, bridging urban-rural gaps."
+      },
+      {
+        "age": "65",
+        "type": "elder",
+        "text": "From an elder's view, this builds on community resilience, ensuring tech honors our heritage while preparing youth for future challenges."
+      }
     ],
-    source: "Caribbean Development Bank",
-    sourceUrl: "https://www.caribank.org/newsroom/news-and-events/caribbean-economies-face-modest-growth-2026-amid-global-uncertainty-cdb",
-    duration: "8–10 min",
-    stats: [
-      { label: "Growth excl. Guyana", val: "1.1%" },
-      { label: "Guyana growth", val: ">20%" },
-      { label: "Avg. inflation drop", val: "3.4%" }
-    ]
+    "source": "Nevis Pages",
+    "sourceUrl": "https://www.nevispages.com/eastern-caribbean-advances-bold-innovation-agenda-with-landmark-mou/",
+    "duration": "8–10 min"
   },
   {
-    id: 2, category: "tech", categoryLabel: "Tech", hot: true,
-    title: "Dominican Republic Signs NVIDIA + Google Deals — Is It the Caribbean's New Tech Capital?",
-    summary: "The DR has inked strategic agreements with NVIDIA for an AI Center of Excellence, a $500M+ Google investment for Latin America's first Digital Exchange International Port, and a $600M commercial spaceport deal. Satellite launch planned before May 2028.",
-    points: [
-      { age: "30", type: "young", text: "This is massive for Caribbean tech talent — will we see brain drain reverse as high-value AI jobs come to the region?" },
-      { age: "65", type: "elder", text: "Big deals sound good in press conferences — but we've seen foreign investment promises before. What's the local ownership stake and who actually benefits?" }
+    "id": 2,
+    "featured": false,
+    "category": "tech",
+    "categoryLabel": "Tech",
+    "hot": true,
+    "title": "STEMGuyana Joins EC-RIA for Regional Robotics Youth Push",
+    "summary": "STEMGuyana's new MOU with EC-RIA enables Guyanese students in OECS Super Regional Robotics Challenge in St. Kitts (March 16-20). Fosters cross-Caribbean STEAM collaboration and innovation skills. Key for nurturing next-gen tech leaders amid global competition.",
+    "points": [
+      {
+        "age": "30",
+        "type": "young",
+        "text": "Young perspective: Exciting for hands-on robotics to spark startups, connecting islands digitally."
+      },
+      {
+        "age": "65",
+        "type": "elder",
+        "text": "Elder view: Reminds of self-reliance struggles; this unites youth in practical skills for sovereignty."
+      }
     ],
-    source: "De Último Minuto",
-    sourceUrl: "https://deultimominuto.net/en/technology/from-ai-centers-of-excellence-to-launching-satellites-dr-prepares-to-take-a-big-leap-as-a-technological-and-innovation-hub-in-the-caribbean/",
-    duration: "7–9 min"
+    "source": "Kaieteur News",
+    "sourceUrl": "https://kaieteurnewsonline.com/2026/03/17/stemguyana-joins-eastern-caribbean-robotics-and-innovation-association/",
+    "duration": "7–9 min"
   },
   {
-    id: 3, category: "tech", categoryLabel: "Tech", hot: false,
-    title: "Caribbean Islands Building Their Own Data Centers — Ending the Foreign Storage Era",
-    summary: "Caribbean countries have long stored government and corporate data in foreign data centers in North America and Europe. That's shifting fast as AI drives demand for regional data sovereignty. Small island states are now building local infrastructure for the first time.",
-    points: [
-      { age: "30", type: "young", text: "Data sovereignty isn't just a tech issue — it's about who controls the information that governs Caribbean lives. AI makes this urgent right now." },
-      { age: "65", type: "elder", text: "What good is a local data center if the expertise to run it still lives abroad? This needs a serious human capital investment, not just hardware." }
+    "id": 3,
+    "featured": false,
+    "category": "econ",
+    "categoryLabel": "Economy",
+    "hot": false,
+    "title": "CDB 2026 News Conference Unveils Regional Dev Priorities",
+    "summary": "Caribbean Development Bank held its annual conference on March 3, outlining financing for infrastructure, climate resilience, and growth. Focuses on CDB reports for sustainable inter-island economics. Crucial for addressing debt, tourism recovery in small islands.",
+    "points": [
+      {
+        "age": "30",
+        "type": "young",
+        "text": "Young host: Optimistic on funding green jobs, fintech to modernize family businesses."
+      },
+      {
+        "age": "65",
+        "type": "elder",
+        "text": "Elder perspective: Echoes past CDB aid; stresses prudent investments over aid dependency."
+      }
     ],
-    source: "ICT Pulse",
-    sourceUrl: "https://ict-pulse.com/2026/03/roundup-for-the-week-ending-1-march-2026/",
-    duration: "6–8 min"
+    "source": "Caribbean Development Bank",
+    "sourceUrl": "https://www.caribank.org/newsroom/news-and-events/2026-annual-news-conference",
+    "duration": "6–8 min"
   },
   {
-    id: 4, category: "music", categoryLabel: "Music", hot: true,
-    title: "ECCO Distributes Record $1.3M in Royalties to Eastern Caribbean Artists",
-    summary: "The Eastern Caribbean Collective Organization for Music Rights (ECCO) has issued its largest-ever royalty payout — $1.3 million USD — to artists across the OECS.",
-    points: [
-      { age: "30", type: "young", text: "Caribbean artists are finally seeing real money from their streams and airplay. But most still don't know how to register. Is the system set up to fail them?" },
-      { age: "65", type: "elder", text: "In my day, artists just got a handshake deal. $1.3M sounds big but divide that across the whole Eastern Caribbean — the fight for fair pay is far from over." }
+    "id": 4,
+    "featured": false,
+    "category": "tech",
+    "categoryLabel": "Tech",
+    "hot": true,
+    "title": "Barbados $188M Blueprint Targets World-Class Digital Economy by 2030",
+    "summary": "Minister Reid's budget shifts Barbados to cutting-edge digital infrastructure, innovation via Future Barbados agency. Includes AI, cloud for economic shift from maintenance to growth. Sets model for CARICOM digital sovereignty and youth jobs.",
+    "points": [
+      {
+        "age": "30",
+        "type": "young",
+        "text": "30-year-old view: Game-changer for tech startups, remote work in post-pandemic era."
+      },
+      {
+        "age": "65",
+        "type": "elder",
+        "text": "65-year-old lens: Builds on telecom evolution; ensures inclusive access for all ages."
+      }
     ],
-    source: "YouTube / DBS TV",
-    sourceUrl: "https://www.youtube.com/watch?v=Sycf9Dcm8VM",
-    duration: "7–9 min"
+    "source": "ICT Pulse",
+    "sourceUrl": "https://ict-pulse.com/2026/03/roundup-for-the-week-ending-15-march-2026/",
+    "duration": "7–9 min"
   },
   {
-    id: 5, category: "econ", categoryLabel: "Economy", hot: false,
-    title: "Jamaica's Digital Tax Proposal: Taxing Netflix, Spotify & Foreign Digital Services",
-    summary: "Jamaica's Finance Minister has tabled a proposal to apply General Consumption Tax to digital services from abroad — covering streaming, SaaS, e-commerce. If passed for FY2026/27, it would be a landmark shift.",
-    points: [
-      { age: "30", type: "young", text: "It's smart fiscal policy in theory, but it could price out lower-income Jamaicans who rely on affordable streaming to access global culture and education." },
-      { age: "65", type: "elder", text: "The government needs revenue, and foreign tech companies profit enormously from Jamaica without paying a cent. This was always going to happen." }
+    "id": 5,
+    "featured": false,
+    "category": "dev",
+    "categoryLabel": "Development",
+    "hot": false,
+    "title": "SiliconCaribe Tech Week Spotlights AI, Fintech, Blockchain Priorities",
+    "summary": "Event reveals focused Caribbean tech agenda: AI with cultural lens, fintech for inclusion, blockchain for remittances. From Haiti to Trinidad, emphasizes infrastructure over hype. Positions region for competitive global edge.",
+    "points": [
+      {
+        "age": "30",
+        "type": "young",
+        "text": "Young take: AI as tool for creative diaspora ventures, not foreign domination."
+      },
+      {
+        "age": "65",
+        "type": "elder",
+        "text": "Elder insight: Fintech echoes informal economies; blockchain secures family remittances."
+      }
     ],
-    source: "ICT Pulse",
-    sourceUrl: "https://ict-pulse.com/2026/03/roundup-for-the-week-ending-1-march-2026/",
-    duration: "6–8 min"
+    "source": "SiliconCaribe",
+    "sourceUrl": "https://www.siliconcaribe.com/2026/02/24/the-signal-is-clear-5-priorities-emerging-across-siliconcaribes-caribbean-tech-week-2026/",
+    "duration": "8–10 min"
   },
   {
-    id: 6, category: "music", categoryLabel: "Music", hot: false,
-    title: "Island Music Conference 2026: Jamaica Pushes to Institutionalize the Creative Economy",
-    summary: "IMC 2026 in Kingston brought together SiriusXM execs, regional artists, and policy makers around the theme of formally institutionalizing Caribbean creative industries.",
-    points: [
-      { age: "30", type: "young", text: "Caribbean music reaches hundreds of millions globally but our artists are still DIYing their businesses. Institutionalizing the industry means real infrastructure." },
-      { age: "65", type: "elder", text: "We've always known Caribbean music has global value. The question is whether governments will stop treating culture as an afterthought." }
+    "id": 6,
+    "featured": false,
+    "category": "econ",
+    "categoryLabel": "Economy",
+    "hot": true,
+    "title": "CIBC Caribbean Launches Digital Onboarding for Business Banking",
+    "summary": "Antigua businesses can now open accounts fully online, speeding SME access to capital. Part of fintech wave for financial inclusion across islands. Boosts inter-island trade, diaspora investments.",
+    "points": [
+      {
+        "age": "30",
+        "type": "young",
+        "text": "Young host: Streamlines hustle for entrepreneurs, integrates with global apps."
+      },
+      {
+        "age": "65",
+        "type": "elder",
+        "text": "Elder view: Safer, faster than old bank lines; protects small savers."
+      }
     ],
-    source: "Island Music Conference",
-    sourceUrl: "https://www.islandmusicconference.com/post/jamaica-leads-regional-shift-toward-institutionalizing-the-creative-economy",
-    duration: "7–8 min"
+    "source": "ICT Pulse",
+    "sourceUrl": "https://ict-pulse.com/2026/03/roundup-for-the-week-ending-1-march-2026/",
+    "duration": "5–7 min"
   },
   {
-    id: 7, category: "dev", categoryLabel: "Development", hot: false,
-    title: "Guyana's Biometric National ID Rollout — Progress or Privacy Risk?",
-    summary: "Guyana is rolling out biometric national IDs promising faster services and reduced bureaucracy. But critics are raising serious questions about data control, sovereignty, and alignment with global tech politics.",
-    points: [
-      { age: "30", type: "young", text: "Biometrics are everywhere now — face ID on your phone, airport e-gates. But a government biometric database is different. Who are they sharing this data with?" },
-      { age: "65", type: "elder", text: "In a small country with one-party dominance, a biometric database is political power. History says we should be very careful about who holds these keys." }
+    "id": 7,
+    "featured": false,
+    "category": "tech",
+    "categoryLabel": "Tech",
+    "hot": false,
+    "title": "Liberty Caribbean Drives Cloud, AI Jobs via AWS Partnership",
+    "summary": "Liberty's five-year AWS deal accelerates cloud transformation, AI for LAC, prioritizing data sovereignty. Pushes digital jobs, cyber resilience. Empowers telecoms for regional innovation hubs.",
+    "points": [
+      {
+        "age": "30",
+        "type": "young",
+        "text": "30s angle: Unlocks freelance AI gigs, scales local apps regionally."
+      },
+      {
+        "age": "65",
+        "type": "elder",
+        "text": "Elder's caution: Balance tech speed with data privacy rooted in community trust."
+      }
     ],
-    source: "Caribbean World Magazine",
-    sourceUrl: "https://caribbeanworld-magazine.com/travel-trade/home/what-s-up-in-the-caribbean-march-2026-culture-events-and-buzz-across-the-islands/",
-    duration: "6–8 min"
+    "source": "Guardian",
+    "sourceUrl": "http://www.guardian.co.tt/news/liberty-caribbean-pushes-for-more-digital-jobs-in-the-caribbean-6.2.2507860.f8e93103f5",
+    "duration": "6–8 min"
   },
   {
-    id: 8, category: "culture", categoryLabel: "Culture", hot: false,
-    title: "Dancehall's 2026 Resurgence: Vybz Kartel, Masicka & the New Wave",
-    summary: "The 2026 dancehall season is in full effect — Vybz Kartel, Masicka, Popcaan, Skippa, and Mavado are dominating charts. Jamaica's bounce-back post-Hurricane Melissa is being felt through culture.",
-    points: [
-      { age: "30", type: "young", text: "Dancehall is the most globally influential Caribbean music right now. But the artists making it aren't always the ones cashing in." },
-      { age: "65", type: "elder", text: "Every time Jamaica is hit by a storm or a crisis, the music gets more powerful. That resilience is beautiful — but culture shouldn't have to be our only export." }
+    "id": 8,
+    "featured": false,
+    "category": "culture",
+    "categoryLabel": "Culture",
+    "hot": false,
+    "title": "Caribbean AI Panels Explore Heritage, Identity in Tech Era",
+    "summary": "SiliconCaribe sessions like 'AI & Our Caribbean Heritage' tackle cultural implications of AI. From identity to creativity, shapes tech in Caribbean image. Matters for preserving soca, stories amid digital shift.",
+    "points": [
+      {
+        "age": "30",
+        "type": "young",
+        "text": "Young vibe: AI to remix reggae heritage into viral global content."
+      },
+      {
+        "age": "65",
+        "type": "elder",
+        "text": "Elder wisdom: Guard oral traditions, ensure AI amplifies not erases culture."
+      }
     ],
-    source: "Billboard / Reggae Vibes",
-    sourceUrl: "https://www.billboard.com/lists/caribbean-music-festivals-2026-guide-list-reggae-dancehall/",
-    duration: "5–7 min"
+    "source": "SiliconCaribe",
+    "sourceUrl": "https://www.siliconcaribe.com/2026/02/24/the-signal-is-clear-5-priorities-emerging-across-siliconcaribes-caribbean-tech-week-2026/",
+    "duration": "7–9 min"
   }
 ];
 // AUTO-UPDATE-END
@@ -579,17 +666,95 @@ const TOPICS = [
 // AUTO-ARCHIVE-START
 const ARCHIVE = [
   {
-    date: "March 15, 2026",
-    isoDate: "2026-03-15",
-    topics: [
-      { title: "Caribbean's 2026 Economic Crossroads: Modest Growth vs. Climate Debt", category: "dev", summary: "CDB projects 1.1% GDP growth for 2026 excluding Guyana, while Guyana rockets past 20%. Nine countries carry debt above 60% of GDP." },
-      { title: "Dominican Republic Signs NVIDIA + Google Deals", category: "tech", summary: "DR inks agreements with NVIDIA for AI Center of Excellence and a $500M+ Google investment for Latin America's first Digital Exchange International Port." },
-      { title: "Caribbean Islands Building Their Own Data Centers", category: "tech", summary: "AI drives demand for regional data sovereignty as small island states build local infrastructure for the first time." },
-      { title: "ECCO Distributes Record $1.3M in Royalties to Eastern Caribbean Artists", category: "music", summary: "Largest-ever royalty payout to OECS artists signals maturation of the region's music economy." },
-      { title: "Jamaica's Digital Tax Proposal: Taxing Netflix, Spotify & Foreign Digital Services", category: "econ", summary: "Finance Minister tables GCT on digital services from abroad for FY2026/27." },
-      { title: "Island Music Conference 2026: Institutionalizing the Creative Economy", category: "music", summary: "IMC 2026 in Kingston brings together SiriusXM execs, artists, and policy makers." },
-      { title: "Guyana's Biometric National ID Rollout — Progress or Privacy Risk?", category: "dev", summary: "Biometric IDs roll out with questions about data control and sovereignty." },
-      { title: "Dancehall's 2026 Resurgence: Vybz Kartel, Masicka & the New Wave", category: "culture", summary: "Jamaica's creative scene rebounds post-Hurricane Melissa with charged energy." }
+    "date": "March 20, 2026",
+    "isoDate": "2026-03-20",
+    "topics": [
+      {
+        "title": "Caribbean's 2026 Economic Crossroads: Modest Growth vs. Climate Debt",
+        "category": "dev",
+        "summary": "The Caribbean Development Bank projects just 1.1% GDP growth for 2026 (excluding Guyana) while Guyana itself rockets past 20%. Nine countries still carry debt above 60% of GDP. Meanwhile, hurricane damage continues to compound in Jamaica. Is the region at a turning point or stuck in a cycle?"
+      },
+      {
+        "title": "Dominican Republic Signs NVIDIA + Google Deals — Is It the Caribbean's New Tech Capital?",
+        "category": "tech",
+        "summary": "The DR has inked strategic agreements with NVIDIA for an AI Center of Excellence, a $500M+ Google investment for Latin America's first Digital Exchange International Port, and a $600M commercial spaceport deal. Satellite launch planned before May 2028."
+      },
+      {
+        "title": "Caribbean Islands Building Their Own Data Centers — Ending the Foreign Storage Era",
+        "category": "tech",
+        "summary": "Caribbean countries have long stored government and corporate data in foreign data centers in North America and Europe. That's shifting fast as AI drives demand for regional data sovereignty. Small island states are now building local infrastructure for the first time."
+      },
+      {
+        "title": "ECCO Distributes Record $1.3M in Royalties to Eastern Caribbean Artists",
+        "category": "music",
+        "summary": "The Eastern Caribbean Collective Organization for Music Rights (ECCO) has issued its largest-ever royalty payout — $1.3 million USD — to artists across the OECS."
+      },
+      {
+        "title": "Jamaica's Digital Tax Proposal: Taxing Netflix, Spotify & Foreign Digital Services",
+        "category": "econ",
+        "summary": "Jamaica's Finance Minister has tabled a proposal to apply General Consumption Tax to digital services from abroad — covering streaming, SaaS, e-commerce. If passed for FY2026/27, it would be a landmark shift."
+      },
+      {
+        "title": "Island Music Conference 2026: Jamaica Pushes to Institutionalize the Creative Economy",
+        "category": "music",
+        "summary": "IMC 2026 in Kingston brought together SiriusXM execs, regional artists, and policy makers around the theme of formally institutionalizing Caribbean creative industries."
+      },
+      {
+        "title": "Guyana's Biometric National ID Rollout — Progress or Privacy Risk?",
+        "category": "dev",
+        "summary": "Guyana is rolling out biometric national IDs promising faster services and reduced bureaucracy. But critics are raising serious questions about data control, sovereignty, and alignment with global tech politics."
+      },
+      {
+        "title": "Dancehall's 2026 Resurgence: Vybz Kartel, Masicka & the New Wave",
+        "category": "culture",
+        "summary": "The 2026 dancehall season is in full effect — Vybz Kartel, Masicka, Popcaan, Skippa, and Mavado are dominating charts. Jamaica's bounce-back post-Hurricane Melissa is being felt through culture."
+      }
+    ]
+  },
+  {
+    "date": "March 15, 2026",
+    "isoDate": "2026-03-15",
+    "topics": [
+      {
+        "title": "Caribbean's 2026 Economic Crossroads: Modest Growth vs. Climate Debt",
+        "category": "dev",
+        "summary": "CDB projects 1.1% GDP growth for 2026 excluding Guyana, while Guyana rockets past 20%. Nine countries carry debt above 60% of GDP."
+      },
+      {
+        "title": "Dominican Republic Signs NVIDIA + Google Deals",
+        "category": "tech",
+        "summary": "DR inks agreements with NVIDIA for AI Center of Excellence and a $500M+ Google investment for Latin America's first Digital Exchange International Port."
+      },
+      {
+        "title": "Caribbean Islands Building Their Own Data Centers",
+        "category": "tech",
+        "summary": "AI drives demand for regional data sovereignty as small island states build local infrastructure for the first time."
+      },
+      {
+        "title": "ECCO Distributes Record $1.3M in Royalties to Eastern Caribbean Artists",
+        "category": "music",
+        "summary": "Largest-ever royalty payout to OECS artists signals maturation of the region's music economy."
+      },
+      {
+        "title": "Jamaica's Digital Tax Proposal: Taxing Netflix, Spotify & Foreign Digital Services",
+        "category": "econ",
+        "summary": "Finance Minister tables GCT on digital services from abroad for FY2026/27."
+      },
+      {
+        "title": "Island Music Conference 2026: Institutionalizing the Creative Economy",
+        "category": "music",
+        "summary": "IMC 2026 in Kingston brings together SiriusXM execs, artists, and policy makers."
+      },
+      {
+        "title": "Guyana's Biometric National ID Rollout — Progress or Privacy Risk?",
+        "category": "dev",
+        "summary": "Biometric IDs roll out with questions about data control and sovereignty."
+      },
+      {
+        "title": "Dancehall's 2026 Resurgence: Vybz Kartel, Masicka & the New Wave",
+        "category": "culture",
+        "summary": "Jamaica's creative scene rebounds post-Hurricane Melissa with charged energy."
+      }
     ]
   }
 ];
